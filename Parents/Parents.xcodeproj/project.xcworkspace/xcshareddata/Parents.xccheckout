@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D9D37828-B77A-48BF-8AB7-B05361932429</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Parents</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BC885593EB7407C65A5EB33B52E0F0FAE0BE8BAF</key>
+		<string>https://github.com/karthik-ideas2it/TestImagine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Parents/Parents.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BC885593EB7407C65A5EB33B52E0F0FAE0BE8BAF</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/karthik-ideas2it/TestImagine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BC885593EB7407C65A5EB33B52E0F0FAE0BE8BAF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BC885593EB7407C65A5EB33B52E0F0FAE0BE8BAF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TestImagine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
