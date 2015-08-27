@@ -14,6 +14,8 @@
 		29C596681B8DBEE000138989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C596671B8DBEE000138989 /* Images.xcassets */; };
 		29C5966B1B8DBEE000138989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C596691B8DBEE000138989 /* LaunchScreen.xib */; };
 		29C596771B8DBEE000138989 /* ParentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C596761B8DBEE000138989 /* ParentsTests.m */; };
+		29C596811B8DDEFA00138989 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C596801B8DDEFA00138989 /* FBSDKCoreKit.framework */; };
+		29C596831B8DE04600138989 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C596821B8DE04600138989 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		29C596701B8DBEE000138989 /* ParentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C596751B8DBEE000138989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C596761B8DBEE000138989 /* ParentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentsTests.m; sourceTree = "<group>"; };
+		29C596801B8DDEFA00138989 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = SDKs/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		29C596821B8DE04600138989 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = SDKs/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C596831B8DE04600138989 /* FBSDKLoginKit.framework in Frameworks */,
+				29C596811B8DDEFA00138989 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,8 @@
 		29C5965A1B8DBEE000138989 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29C596821B8DE04600138989 /* FBSDKLoginKit.framework */,
+				29C596801B8DDEFA00138989 /* FBSDKCoreKit.framework */,
 				29C5965B1B8DBEE000138989 /* Info.plist */,
 				29C5965C1B8DBEE000138989 /* main.m */,
 			);
@@ -349,9 +357,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parents/SDKs",
+				);
 				INFOPLIST_FILE = Parents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -359,9 +372,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parents/SDKs",
+				);
 				INFOPLIST_FILE = Parents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -418,6 +436,7 @@
 				29C5967C1B8DBEE000138989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29C5967D1B8DBEE000138989 /* Build configuration list for PBXNativeTarget "ParentsTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				29C5967F1B8DBEE000138989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
