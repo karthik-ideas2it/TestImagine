@@ -7,6 +7,8 @@
 //
 
 #import "ExploreVC.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 @interface ExploreVC ()
 
@@ -16,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self DownloadImageFromS3];
+    
+      // Do any additional setup after loading the view.
 }
 -(void)viewWillLayoutSubviews{
     [self SetHeaderView];
@@ -161,6 +165,7 @@
     
     return  cell;
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     switch (collectionView.tag) {
         case 0:
@@ -176,6 +181,28 @@
             break;
     }
     return CGSizeMake(0, 0);
+}
+#pragma mark DownloadImages
+-(UIImage*)DownloadImageFromS3{
+    UIImage *img_thumb;
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png"]];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"filename"];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successfully downloaded file to %@", path);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    [operation start];
+    
+    
+    return img_thumb;
+    
 }
 /*
 #pragma mark - Navigation
