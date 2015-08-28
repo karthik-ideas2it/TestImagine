@@ -8,7 +8,7 @@
 
 #import "ExploreVC.h"
 #import <AFNetworking/AFNetworking.h>
-
+#import <UIImageView+AFNetworking.h>
 
 @interface ExploreVC ()
 
@@ -147,11 +147,23 @@
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-    UIImageView *img=(UIImageView*)[cell viewWithTag:10];
+  __weak  UIImageView *img=(UIImageView*)[cell viewWithTag:10];
     switch (collectionView.tag) {
         case 0:
-            [img setImage:[UIImage imageNamed:@"Explore_list.png"]];
+        {
+            NSURL *url = [NSURL URLWithString:@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+            [img setImageWithURLRequest:request
+                                  placeholderImage:[UIImage imageNamed:@"Explore.png"]
+                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                               
+                                               [img setImage: image];
+                                               [img setNeedsLayout];
+                                               } failure:nil];
+        }
             break;
+            
         case 1:
             [img setImage:[UIImage imageNamed:@"recomend.png"]];
             break;
@@ -185,15 +197,21 @@
 #pragma mark DownloadImages
 -(UIImage*)DownloadImageFromS3{
     UIImage *img_thumb;
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png"]];
+    NSString *str=@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png";
+    NSString *fileName=[[str componentsSeparatedByString:@"/"] lastObject];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"filename"];
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+    img_thumb = [UIImage imageNamed:path];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Successfully downloaded file to %@", path);
+        UIImage *img_thumb=[UIImage imageNamed:path];
+        [tbl_exlpore reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
