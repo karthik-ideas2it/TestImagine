@@ -21,9 +21,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    AWSCognitoCredentialsProvider *credentialsProvider = [[AWSCognitoCredentialsProvider alloc] initWithRegionType:AWSRegionUSEast1
+                                                                                                    identityPoolId:@"YourIdentityPoolId"];
+    
+    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1
+                                                                         credentialsProvider:credentialsProvider];
+    
+    AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
+    
+    
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
     
+}
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler {
+    /*
+     Store the completion handler.
+     */
+    [AWSS3TransferUtility interceptApplication:application
+           handleEventsForBackgroundURLSession:identifier
+                             completionHandler:completionHandler];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExploreVC : UIViewController
+@interface ExploreVC : UIViewController <UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     IBOutlet UIView *vw_header;
     IBOutlet UIScrollView *scr_header;
+    IBOutlet UITableView *tbl_exlpore;
     
 }
 @end
