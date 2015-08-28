@@ -159,6 +159,8 @@
 				29C596671B8DBEE000138989 /* Images.xcassets */,
 				29C596691B8DBEE000138989 /* LaunchScreen.xib */,
 				29C5965A1B8DBEE000138989 /* Supporting Files */,
+				FB98FEA21B903082007F5C4D /* LoginService.h */,
+				FB98FEA31B903082007F5C4D /* LoginService.m */,
 			);
 			path = Parents;
 			sourceTree = "<group>";
@@ -445,16 +447,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB98FECC1B903186007F5C4D /* AFHTTPRequestOperation.m in Sources */,
 				29C596951B8F05E300138989 /* MessagesHomeVC.m in Sources */,
 				29C596631B8DBEE000138989 /* ViewController.m in Sources */,
 				29C596601B8DBEE000138989 /* AppDelegate.m in Sources */,
 				29C5969E1B8F064100138989 /* ShopHomeVC.m in Sources */,
+				FB98FED51B903186007F5C4D /* AFNetworkActivityIndicatorManager.m in Sources */,
+				FB98FED41B903186007F5C4D /* AFURLSessionManager.m in Sources */,
+				FB98FECE1B903186007F5C4D /* AFHTTPSessionManager.m in Sources */,
 				29C596981B8F060200138989 /* CommunityHomeVC.m in Sources */,
+				FB98FECF1B903186007F5C4D /* AFNetworkReachabilityManager.m in Sources */,
 				29C596891B8EF08300138989 /* SignUpVC.m in Sources */,
+				FB98FED91B903186007F5C4D /* UIImageView+AFNetworking.m in Sources */,
+				FB98FEDA1B903186007F5C4D /* UIProgressView+AFNetworking.m in Sources */,
+				FB98FED31B903186007F5C4D /* AFURLResponseSerialization.m in Sources */,
+				FB98FEDB1B903186007F5C4D /* UIRefreshControl+AFNetworking.m in Sources */,
+				FB98FED21B903186007F5C4D /* AFURLRequestSerialization.m in Sources */,
+				FB98FED11B903186007F5C4D /* AFURLConnectionOperation.m in Sources */,
+				FB98FED81B903186007F5C4D /* UIButton+AFNetworking.m in Sources */,
+				FB98FED61B903186007F5C4D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				FB98FECD1B903186007F5C4D /* AFHTTPRequestOperationManager.m in Sources */,
+				FB98FEA41B903082007F5C4D /* LoginService.m in Sources */,
 				29C5969B1B8F062000138989 /* DashboardHomeVC.m in Sources */,
+				FB98FED01B903186007F5C4D /* AFSecurityPolicy.m in Sources */,
 				29C596861B8EEF2500138989 /* HomeVC.m in Sources */,
+				FB98FEDC1B903186007F5C4D /* UIWebView+AFNetworking.m in Sources */,
 				29C5968E1B8F051400138989 /* ExploreVC.m in Sources */,
 				29C5965D1B8DBEE000138989 /* main.m in Sources */,
+				FB98FED71B903186007F5C4D /* UIAlertView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

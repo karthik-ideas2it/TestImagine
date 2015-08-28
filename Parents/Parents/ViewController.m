@@ -45,6 +45,7 @@
                   startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                       if (!error) {
                           NSLog(@"fetched user:%@", result);
+                          NSLog(@"%@",[[FBSDKAccessToken currentAccessToken] tokenString]);
                           [self LoadHomeView:nil];
 
                       }
