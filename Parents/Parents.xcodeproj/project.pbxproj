@@ -37,8 +37,8 @@
 		29C596E81B8F29A600138989 /* Messages_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C596E41B8F29A600138989 /* Messages_icon.png */; };
 		29C596E91B8F29A600138989 /* Shop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C596E51B8F29A600138989 /* Shop_icon.png */; };
 		9211C3A3C427E8E6CDD67CCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4780BC81102B7D758096A04A /* libPods.a */; };
-		FB98FEF71B907528007F5C4D /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF31B907528007F5C4D /* LoginService.m */; };
-		FB98FEF81B907528007F5C4D /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF61B907528007F5C4D /* AppSingleton.m */; };
+		FBFD53841B907F1700B47F1D /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF31B907528007F5C4D /* LoginService.m */; };
+		FBFD53851B907F1700B47F1D /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF61B907528007F5C4D /* AppSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -471,6 +471,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBFD53841B907F1700B47F1D /* LoginService.m in Sources */,
+				FBFD53851B907F1700B47F1D /* AppSingleton.m in Sources */,
 				29C596951B8F05E300138989 /* MessagesHomeVC.m in Sources */,
 				29C596631B8DBEE000138989 /* ViewController.m in Sources */,
 				29C596601B8DBEE000138989 /* AppDelegate.m in Sources */,
