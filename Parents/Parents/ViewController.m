@@ -9,6 +9,14 @@
 #import "ViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+#import "ExploreVC.h"
+#import "MessagesHomeVC.h"
+#import "CommunityHomeVC.h"
+#import "DashboardHomeVC.h"
+#import "ShopHomeVC.h"
+
+#import "HomeVC.h"
 @interface ViewController ()
 
 @end
@@ -24,36 +32,33 @@
 }
 -(IBAction)FbLoginAction:(id)sender{
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login
-     logInWithReadPermissions:  @[@"public_profile", @"email", @"user_friends",@"user_relationships"]
+    [login logInWithReadPermissions:  @[@"public_profile", @"email", @"user_friends", @"user_birthday"]
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
-             NSLog(@"Process error");
+             NSLog(@"Login error");
          } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
+             NSLog(@"Login Cancelled");
          } else {
-             NSLog(@"Logged in");
-         }
-     }];
+             if ([FBSDKAccessToken currentAccessToken]) {
+                 [[[FBSDKGraphRequest alloc] initWithGraphPath:[NSString stringWithFormat:@"me"] parameters:@{@"fields": @"picture, email,gender,cover,birthday"}
+                                                    HTTPMethod:@"GET"]
+                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                      if (!error) {
+                          NSLog(@"fetched user:%@", result);
+                          [self LoadHomeView:nil];
 
-    if ([FBSDKAccessToken currentAccessToken]) {
-        [[[FBSDKGraphRequest alloc] initWithGraphPath:[NSString stringWithFormat:@"me",[FBSDKProfile currentProfile].userID ] parameters:@{@"fields": @"picture, email,birthday,gender,hometown,relationship_status,work,cover"}
-          HTTPMethod:@"GET"]
-         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-             if (!error) {
-                 NSLog(@"fetched user:%@", result);
+                      }
+                  }];
              }
-         }];
-    }
-    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                  initWithGraphPath:@"/me/family"
-                                  parameters:@{@"fields":@"name,birthday"}
-                                  HTTPMethod:@"GET"];
-    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-                                          id result,
-                                          NSError *error) {
-        // Handle the result
-    }];
+         }
+     }];    
+}
+
+-(IBAction)LoadHomeView:(id)sender{
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    
+NSLog(@"User ID :%@",    [[FBSDKProfile currentProfile] userID]);
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
