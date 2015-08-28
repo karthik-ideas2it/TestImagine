@@ -37,6 +37,8 @@
 		29C596E81B8F29A600138989 /* Messages_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C596E41B8F29A600138989 /* Messages_icon.png */; };
 		29C596E91B8F29A600138989 /* Shop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C596E51B8F29A600138989 /* Shop_icon.png */; };
 		9211C3A3C427E8E6CDD67CCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4780BC81102B7D758096A04A /* libPods.a */; };
+		FB98FEF71B907528007F5C4D /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF31B907528007F5C4D /* LoginService.m */; };
+		FB98FEF81B907528007F5C4D /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF61B907528007F5C4D /* AppSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,10 @@
 		4780BC81102B7D758096A04A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85CF410463D1BB17994E08B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E4052828A70E9B1B5032D893 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FB98FEF21B907528007F5C4D /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
+		FB98FEF31B907528007F5C4D /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
+		FB98FEF51B907528007F5C4D /* AppSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSingleton.h; sourceTree = "<group>"; };
+		FB98FEF61B907528007F5C4D /* AppSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,8 @@
 		29C596591B8DBEE000138989 /* Parents */ = {
 			isa = PBXGroup;
 			children = (
+				FB98FEF11B907528007F5C4D /* Services */,
+				FB98FEF41B907528007F5C4D /* Utility */,
 				29C5968A1B8F04E900138989 /* Home */,
 				29C5965E1B8DBEE000138989 /* AppDelegate.h */,
 				29C5965F1B8DBEE000138989 /* AppDelegate.m */,
@@ -295,6 +303,24 @@
 				4780BC81102B7D758096A04A /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB98FEF11B907528007F5C4D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FB98FEF21B907528007F5C4D /* LoginService.h */,
+				FB98FEF31B907528007F5C4D /* LoginService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FB98FEF41B907528007F5C4D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FB98FEF51B907528007F5C4D /* AppSingleton.h */,
+				FB98FEF61B907528007F5C4D /* AppSingleton.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
