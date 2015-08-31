@@ -24,6 +24,8 @@
     LoginService *objLoginService;
 }
 
+-(void)getFBDetails;
+
 @property (nonatomic, strong) NSString *strEmail;
 
 @end
@@ -41,17 +43,7 @@
 -(IBAction)FbLoginAction:(id)sender{
     
     if ([FBSDKAccessToken currentAccessToken]) {
-        [[[FBSDKGraphRequest alloc] initWithGraphPath:[NSString stringWithFormat:@"me"] parameters:@{@"fields": @"picture, email,gender,cover,birthday"}
-                                           HTTPMethod:@"GET"]
-         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-             if (!error) {
-                 NSLog(@"fetched user:%@", result);
-                 self.strEmail = [result valueForKeyPath:@"email"];
-                 NSLog(@"%@",[[FBSDKAccessToken currentAccessToken] tokenString]);
-                 [self LoadHomeView:nil];
-                 
-             }
-         }];
+        [self getFBDetails];
     }
     else
     {
@@ -64,21 +56,26 @@
                                         NSLog(@"Login Cancelled");
                                     } else {
                                         if ([FBSDKAccessToken currentAccessToken]) {
-                                            [[[FBSDKGraphRequest alloc] initWithGraphPath:[NSString stringWithFormat:@"me"] parameters:@{@"fields": @"picture, email,gender,cover,birthday"}
-                                                                               HTTPMethod:@"GET"]
-                                             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-                                                 if (!error) {
-                                                     NSLog(@"fetched user:%@", result);
-                                                     self.strEmail = [result valueForKeyPath:@"email"];
-                                                     NSLog(@"%@",[[FBSDKAccessToken currentAccessToken] tokenString]);
-                                                     [self LoadHomeView:nil];
-                                                     
-                                                 }
-                                             }];
+                                            [self getFBDetails];
                                         }
                                     }
                                 }];
     }
+}
+
+-(void)getFBDetails
+{
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:[NSString stringWithFormat:@"me"] parameters:@{@"fields": @"picture, email,gender,cover,birthday"}
+                                       HTTPMethod:@"GET"]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         if (!error) {
+             NSLog(@"fetched user:%@", result);
+             self.strEmail = [result valueForKeyPath:@"email"];
+             NSLog(@"%@",[[FBSDKAccessToken currentAccessToken] tokenString]);
+             [self LoadHomeView:nil];
+             
+         }
+     }];
 }
 
 -(IBAction)LoadHomeView:(id)sender{
@@ -87,13 +84,14 @@
     
     NSLog(@"User ID :%@",    [[FBSDKProfile currentProfile] userID]);
     objLoginService = [[LoginService alloc] init];
+    objLoginService.delegate = self;
     [objLoginService loginWithEmail:self.strEmail AccessToken:[[FBSDKAccessToken currentAccessToken] tokenString]UserID:[[FBSDKProfile currentProfile] userID]];
     
 }
 
 -(void)loginSuccessful
 {
-    
+    NSLog(@"%@",[[AppSingleton sharedInstance] authorizationToken]);
 }
 
 -(void)networkFailureWithError:(NSError *)error title:(NSString *)errorTitle
