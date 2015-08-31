@@ -230,6 +230,7 @@
                     <navigationItem key="navigationItem" id="cGg-8C-N9u"/>
                     <connections>
                         <outlet property="scr_header" destination="ij2-Od-aQ1" id="gBf-NY-VTY"/>
+                        <outlet property="tbl_exlpore" destination="aeE-tT-TjO" id="ZGa-F3-7VR"/>
                         <outlet property="vw_header" destination="7lJ-yd-Cjk" id="1BA-St-WAB"/>
                     </connections>
                 </viewController>
