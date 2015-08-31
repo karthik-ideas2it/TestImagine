@@ -9,6 +9,7 @@
 #import "ExploreVC.h"
 #import <AFNetworking/AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
+#import "ExploreDataModel.h"
 
 @interface ExploreVC ()
 
@@ -18,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self DownloadImageFromS3];
+    [self loadInformationFromServer];
     
       // Do any additional setup after loading the view.
 }
@@ -28,6 +29,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)loadInformationFromServer{
+    
+    NSString *string = [NSString stringWithFormat:@"http://192.168.0.36:8080/RESTServices/recommendations"];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+        [tbl_exlpore reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving information"
+                                                            message:[error localizedDescription]
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    // 5
+    [operation start];
 }
 -(void)SetHeaderView{
     int x=10;
@@ -47,7 +75,7 @@
     [scr_header setPagingEnabled:YES];
     
    [scr_header setFrame:CGRectMake((self.view.frame.size.width/2)-35 , scr_header.frame.origin.y, 90, 90)];
-    [tbl_exlpore setFrame:CGRectMake(tbl_exlpore.frame.origin.x, vw_header.frame.size.height+vw_header.frame.origin.y, self.view.frame.size.width, tbl_exlpore.frame.size.height)];
+    [tbl_exlpore setFrame:CGRectMake(tbl_exlpore.frame.origin.x, vw_header.frame.size.height+vw_header.frame.origin.y-20, self.view.frame.size.width, tbl_exlpore.frame.size.height)];
       
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -100,7 +128,7 @@
     UIView *bg_header=[[UIView alloc]init];
     [bg_header setBackgroundColor:[UIColor colorWithRed:246/255.0 green:137/255.0 blue:37/255.0 alpha:1]];
     
-    [bg_header setFrame:CGRectMake(-15, 6, 180, 38)];
+    [bg_header setFrame:CGRectMake(-15, 6, 150, 38)];
     
     [bg_header.layer setCornerRadius:(bg_header.frame.size.height/2)];
     
@@ -125,7 +153,7 @@
     [lbl_header setTextAlignment:NSTextAlignmentRight];
     
     
-    [lbl_header setFrame:CGRectMake(10, 10, 130, 25)];
+    [lbl_header setFrame:CGRectMake(10, 10, 110, 25)];
     [vw_tblheader addSubview:bg_header];
     
     [vw_tblheader addSubview:lbl_header];
@@ -195,33 +223,6 @@
     return CGSizeMake(0, 0);
 }
 #pragma mark DownloadImages
--(UIImage*)DownloadImageFromS3{
-    UIImage *img_thumb;
-    NSString *str=@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png";
-    NSString *fileName=[[str componentsSeparatedByString:@"/"] lastObject];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
-    img_thumb = [UIImage imageNamed:path];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Successfully downloaded file to %@", path);
-        UIImage *img_thumb=[UIImage imageNamed:path];
-        [tbl_exlpore reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    [operation start];
-    
-    
-    return img_thumb;
-    
-}
 /*
 #pragma mark - Navigation
 

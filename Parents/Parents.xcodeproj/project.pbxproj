@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2994C60F1B9082AD00742A93 /* ExploreDataModel.m */; };
+		29B245D11B9425BC0040C306 /* RecomendationActivities.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C01B9425BC0040C306 /* RecomendationActivities.m */; };
+		29B245D21B9425BC0040C306 /* RecomendationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C21B9425BC0040C306 /* RecomendationBaseClass.m */; };
+		29B245D31B9425BC0040C306 /* RecomendationChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C41B9425BC0040C306 /* RecomendationChildren.m */; };
+		29B245D41B9425BC0040C306 /* RecomendationDiscover.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C61B9425BC0040C306 /* RecomendationDiscover.m */; };
+		29B245D51B9425BC0040C306 /* RecomendationEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C81B9425BC0040C306 /* RecomendationEvents.m */; };
+		29B245D61B9425BC0040C306 /* RecomendationExperiences.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245CA1B9425BC0040C306 /* RecomendationExperiences.m */; };
+		29B245D71B9425BC0040C306 /* RecomendationMarketPlaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245CC1B9425BC0040C306 /* RecomendationMarketPlaces.m */; };
+		29B245D81B9425BC0040C306 /* RecomendationNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245CE1B9425BC0040C306 /* RecomendationNotifications.m */; };
+		29B245D91B9425BC0040C306 /* RecomendationProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245D01B9425BC0040C306 /* RecomendationProducts.m */; };
+		29B245DC1B9426510040C306 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245DB1B9426510040C306 /* ViewController.m */; };
+		29B245DF1B9426B90040C306 /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245DE1B9426B90040C306 /* AppSingleton.m */; };
+		29B245E21B9426C40040C306 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245E11B9426C40040C306 /* LoginService.m */; };
+		29B245E51B9427030040C306 /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245E41B9427030040C306 /* SignUpVC.m */; };
 		29C1185F1B9021C900E0708C /* EventPlaner.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1185C1B9021C900E0708C /* EventPlaner.png */; };
 		29C118601B9021C900E0708C /* Explore_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1185D1B9021C900E0708C /* Explore_list.png */; };
 		29C118611B9021C900E0708C /* recomend.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C1185E1B9021C900E0708C /* recomend.png */; };
 		29C5965D1B8DBEE000138989 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5965C1B8DBEE000138989 /* main.m */; };
 		29C596601B8DBEE000138989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5965F1B8DBEE000138989 /* AppDelegate.m */; };
-		29C596631B8DBEE000138989 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C596621B8DBEE000138989 /* ViewController.m */; };
 		29C596661B8DBEE000138989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C596641B8DBEE000138989 /* Main.storyboard */; };
 		29C596681B8DBEE000138989 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C596671B8DBEE000138989 /* Images.xcassets */; };
 		29C5966B1B8DBEE000138989 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C596691B8DBEE000138989 /* LaunchScreen.xib */; };
@@ -20,7 +33,6 @@
 		29C596811B8DDEFA00138989 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C596801B8DDEFA00138989 /* FBSDKCoreKit.framework */; };
 		29C596831B8DE04600138989 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C596821B8DE04600138989 /* FBSDKLoginKit.framework */; };
 		29C596861B8EEF2500138989 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C596851B8EEF2500138989 /* HomeVC.m */; };
-		29C596891B8EF08300138989 /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C596881B8EF08300138989 /* SignUpVC.m */; };
 		29C5968E1B8F051400138989 /* ExploreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5968D1B8F051400138989 /* ExploreVC.m */; };
 		29C596951B8F05E300138989 /* MessagesHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C596941B8F05E300138989 /* MessagesHomeVC.m */; };
 		29C596981B8F060200138989 /* CommunityHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C596971B8F060200138989 /* CommunityHomeVC.m */; };
@@ -37,8 +49,6 @@
 		29C596E81B8F29A600138989 /* Messages_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C596E41B8F29A600138989 /* Messages_icon.png */; };
 		29C596E91B8F29A600138989 /* Shop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C596E51B8F29A600138989 /* Shop_icon.png */; };
 		9211C3A3C427E8E6CDD67CCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4780BC81102B7D758096A04A /* libPods.a */; };
-		FBFD53841B907F1700B47F1D /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF31B907528007F5C4D /* LoginService.m */; };
-		FBFD53851B907F1700B47F1D /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB98FEF61B907528007F5C4D /* AppSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +62,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2994C60E1B9082AD00742A93 /* ExploreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreDataModel.h; path = Class/Home/Explore/ExploreDataModel.h; sourceTree = "<group>"; };
+		2994C60F1B9082AD00742A93 /* ExploreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreDataModel.m; path = Class/Home/Explore/ExploreDataModel.m; sourceTree = "<group>"; };
+		29B245BE1B9425BC0040C306 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
+		29B245BF1B9425BC0040C306 /* RecomendationActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationActivities.h; sourceTree = "<group>"; };
+		29B245C01B9425BC0040C306 /* RecomendationActivities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationActivities.m; sourceTree = "<group>"; };
+		29B245C11B9425BC0040C306 /* RecomendationBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationBaseClass.h; sourceTree = "<group>"; };
+		29B245C21B9425BC0040C306 /* RecomendationBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationBaseClass.m; sourceTree = "<group>"; };
+		29B245C31B9425BC0040C306 /* RecomendationChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationChildren.h; sourceTree = "<group>"; };
+		29B245C41B9425BC0040C306 /* RecomendationChildren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationChildren.m; sourceTree = "<group>"; };
+		29B245C51B9425BC0040C306 /* RecomendationDiscover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationDiscover.h; sourceTree = "<group>"; };
+		29B245C61B9425BC0040C306 /* RecomendationDiscover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationDiscover.m; sourceTree = "<group>"; };
+		29B245C71B9425BC0040C306 /* RecomendationEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationEvents.h; sourceTree = "<group>"; };
+		29B245C81B9425BC0040C306 /* RecomendationEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationEvents.m; sourceTree = "<group>"; };
+		29B245C91B9425BC0040C306 /* RecomendationExperiences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationExperiences.h; sourceTree = "<group>"; };
+		29B245CA1B9425BC0040C306 /* RecomendationExperiences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationExperiences.m; sourceTree = "<group>"; };
+		29B245CB1B9425BC0040C306 /* RecomendationMarketPlaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationMarketPlaces.h; sourceTree = "<group>"; };
+		29B245CC1B9425BC0040C306 /* RecomendationMarketPlaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationMarketPlaces.m; sourceTree = "<group>"; };
+		29B245CD1B9425BC0040C306 /* RecomendationNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationNotifications.h; sourceTree = "<group>"; };
+		29B245CE1B9425BC0040C306 /* RecomendationNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationNotifications.m; sourceTree = "<group>"; };
+		29B245CF1B9425BC0040C306 /* RecomendationProducts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationProducts.h; sourceTree = "<group>"; };
+		29B245D01B9425BC0040C306 /* RecomendationProducts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationProducts.m; sourceTree = "<group>"; };
+		29B245DA1B9426510040C306 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Class/Login/ViewController.h; sourceTree = "<group>"; };
+		29B245DB1B9426510040C306 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Class/Login/ViewController.m; sourceTree = "<group>"; };
+		29B245DD1B9426B90040C306 /* AppSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSingleton.h; path = Parents/Class/Utility/AppSingleton.h; sourceTree = SOURCE_ROOT; };
+		29B245DE1B9426B90040C306 /* AppSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSingleton.m; path = Parents/Class/Utility/AppSingleton.m; sourceTree = SOURCE_ROOT; };
+		29B245E01B9426C40040C306 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginService.h; path = Parents/Class/Services/LoginService.h; sourceTree = SOURCE_ROOT; };
+		29B245E11B9426C40040C306 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginService.m; path = Parents/Class/Services/LoginService.m; sourceTree = SOURCE_ROOT; };
+		29B245E31B9427030040C306 /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpVC.h; path = Class/Login/SignUpVC.h; sourceTree = "<group>"; };
+		29B245E41B9427030040C306 /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpVC.m; path = Class/Login/SignUpVC.m; sourceTree = "<group>"; };
 		29C1185C1B9021C900E0708C /* EventPlaner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventPlaner.png; sourceTree = "<group>"; };
 		29C1185D1B9021C900E0708C /* Explore_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explore_list.png; sourceTree = "<group>"; };
 		29C1185E1B9021C900E0708C /* recomend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recomend.png; sourceTree = "<group>"; };
@@ -60,8 +99,6 @@
 		29C5965C1B8DBEE000138989 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29C5965E1B8DBEE000138989 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29C5965F1B8DBEE000138989 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		29C596611B8DBEE000138989 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		29C596621B8DBEE000138989 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		29C596651B8DBEE000138989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29C596671B8DBEE000138989 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29C5966A1B8DBEE000138989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -72,8 +109,6 @@
 		29C596821B8DE04600138989 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = SDKs/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		29C596841B8EEF2500138989 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeVC.h; path = Class/Home/HomeVC.h; sourceTree = "<group>"; };
 		29C596851B8EEF2500138989 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeVC.m; path = Class/Home/HomeVC.m; sourceTree = "<group>"; };
-		29C596871B8EF08300138989 /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpVC.h; path = Class/Signup/SignUpVC.h; sourceTree = "<group>"; };
-		29C596881B8EF08300138989 /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpVC.m; path = Class/Signup/SignUpVC.m; sourceTree = "<group>"; };
 		29C5968C1B8F051300138989 /* ExploreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreVC.h; path = Class/Home/Explore/ExploreVC.h; sourceTree = "<group>"; };
 		29C5968D1B8F051400138989 /* ExploreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreVC.m; path = Class/Home/Explore/ExploreVC.m; sourceTree = "<group>"; };
 		29C596931B8F05E300138989 /* MessagesHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessagesHomeVC.h; path = Class/Home/Message/MessagesHomeVC.h; sourceTree = "<group>"; };
@@ -97,10 +132,6 @@
 		4780BC81102B7D758096A04A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85CF410463D1BB17994E08B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E4052828A70E9B1B5032D893 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		FB98FEF21B907528007F5C4D /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
-		FB98FEF31B907528007F5C4D /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
-		FB98FEF51B907528007F5C4D /* AppSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSingleton.h; sourceTree = "<group>"; };
-		FB98FEF61B907528007F5C4D /* AppSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +164,61 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		29B245BA1B94251E0040C306 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				29C5965E1B8DBEE000138989 /* AppDelegate.h */,
+				29C5965F1B8DBEE000138989 /* AppDelegate.m */,
+			);
+			name = Appdelegate;
+			sourceTree = "<group>";
+		};
+		29B245BB1B94252C0040C306 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				29C596641B8DBEE000138989 /* Main.storyboard */,
+				29C596691B8DBEE000138989 /* LaunchScreen.xib */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		29B245BC1B9425470040C306 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				FB98FEF11B907528007F5C4D /* Services */,
+				FB98FEF41B907528007F5C4D /* Utility */,
+				29C5968A1B8F04E900138989 /* Home */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		29B245BD1B9425BC0040C306 /* Recomendation */ = {
+			isa = PBXGroup;
+			children = (
+				29B245BE1B9425BC0040C306 /* DataModels.h */,
+				29B245BF1B9425BC0040C306 /* RecomendationActivities.h */,
+				29B245C01B9425BC0040C306 /* RecomendationActivities.m */,
+				29B245C11B9425BC0040C306 /* RecomendationBaseClass.h */,
+				29B245C21B9425BC0040C306 /* RecomendationBaseClass.m */,
+				29B245C31B9425BC0040C306 /* RecomendationChildren.h */,
+				29B245C41B9425BC0040C306 /* RecomendationChildren.m */,
+				29B245C51B9425BC0040C306 /* RecomendationDiscover.h */,
+				29B245C61B9425BC0040C306 /* RecomendationDiscover.m */,
+				29B245C71B9425BC0040C306 /* RecomendationEvents.h */,
+				29B245C81B9425BC0040C306 /* RecomendationEvents.m */,
+				29B245C91B9425BC0040C306 /* RecomendationExperiences.h */,
+				29B245CA1B9425BC0040C306 /* RecomendationExperiences.m */,
+				29B245CB1B9425BC0040C306 /* RecomendationMarketPlaces.h */,
+				29B245CC1B9425BC0040C306 /* RecomendationMarketPlaces.m */,
+				29B245CD1B9425BC0040C306 /* RecomendationNotifications.h */,
+				29B245CE1B9425BC0040C306 /* RecomendationNotifications.m */,
+				29B245CF1B9425BC0040C306 /* RecomendationProducts.h */,
+				29B245D01B9425BC0040C306 /* RecomendationProducts.m */,
+			);
+			name = Recomendation;
+			path = Class/Home/Explore/Recomendation;
+			sourceTree = "<group>";
+		};
 		29C5964E1B8DBEE000138989 = {
 			isa = PBXGroup;
 			children = (
@@ -156,14 +242,10 @@
 		29C596591B8DBEE000138989 /* Parents */ = {
 			isa = PBXGroup;
 			children = (
-				FB98FEF11B907528007F5C4D /* Services */,
-				FB98FEF41B907528007F5C4D /* Utility */,
-				29C5968A1B8F04E900138989 /* Home */,
-				29C5965E1B8DBEE000138989 /* AppDelegate.h */,
-				29C5965F1B8DBEE000138989 /* AppDelegate.m */,
-				29C596641B8DBEE000138989 /* Main.storyboard */,
+				29B245BC1B9425470040C306 /* Class */,
+				29B245BA1B94251E0040C306 /* Appdelegate */,
+				29B245BB1B94252C0040C306 /* Interfaces */,
 				29C596671B8DBEE000138989 /* Images.xcassets */,
-				29C596691B8DBEE000138989 /* LaunchScreen.xib */,
 				29C5965A1B8DBEE000138989 /* Supporting Files */,
 			);
 			path = Parents;
@@ -215,8 +297,11 @@
 		29C5968B1B8F04F000138989 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				29B245BD1B9425BC0040C306 /* Recomendation */,
 				29C5968C1B8F051300138989 /* ExploreVC.h */,
 				29C5968D1B8F051400138989 /* ExploreVC.m */,
+				2994C60E1B9082AD00742A93 /* ExploreDataModel.h */,
+				2994C60F1B9082AD00742A93 /* ExploreDataModel.m */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -289,10 +374,10 @@
 		29D7A9F31B905A7200C4D406 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				29C596871B8EF08300138989 /* SignUpVC.h */,
-				29C596881B8EF08300138989 /* SignUpVC.m */,
-				29C596611B8DBEE000138989 /* ViewController.h */,
-				29C596621B8DBEE000138989 /* ViewController.m */,
+				29B245DA1B9426510040C306 /* ViewController.h */,
+				29B245DB1B9426510040C306 /* ViewController.m */,
+				29B245E31B9427030040C306 /* SignUpVC.h */,
+				29B245E41B9427030040C306 /* SignUpVC.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -308,8 +393,8 @@
 		FB98FEF11B907528007F5C4D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FB98FEF21B907528007F5C4D /* LoginService.h */,
-				FB98FEF31B907528007F5C4D /* LoginService.m */,
+				29B245E01B9426C40040C306 /* LoginService.h */,
+				29B245E11B9426C40040C306 /* LoginService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -317,8 +402,8 @@
 		FB98FEF41B907528007F5C4D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				FB98FEF51B907528007F5C4D /* AppSingleton.h */,
-				FB98FEF61B907528007F5C4D /* AppSingleton.m */,
+				29B245DD1B9426B90040C306 /* AppSingleton.h */,
+				29B245DE1B9426B90040C306 /* AppSingleton.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -471,16 +556,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBFD53841B907F1700B47F1D /* LoginService.m in Sources */,
-				FBFD53851B907F1700B47F1D /* AppSingleton.m in Sources */,
+				29B245D51B9425BC0040C306 /* RecomendationEvents.m in Sources */,
+				29B245DF1B9426B90040C306 /* AppSingleton.m in Sources */,
+				29B245D71B9425BC0040C306 /* RecomendationMarketPlaces.m in Sources */,
 				29C596951B8F05E300138989 /* MessagesHomeVC.m in Sources */,
-				29C596631B8DBEE000138989 /* ViewController.m in Sources */,
+				29B245D31B9425BC0040C306 /* RecomendationChildren.m in Sources */,
+				29B245D91B9425BC0040C306 /* RecomendationProducts.m in Sources */,
+				29B245E51B9427030040C306 /* SignUpVC.m in Sources */,
 				29C596601B8DBEE000138989 /* AppDelegate.m in Sources */,
 				29C5969E1B8F064100138989 /* ShopHomeVC.m in Sources */,
 				29C596981B8F060200138989 /* CommunityHomeVC.m in Sources */,
-				29C596891B8EF08300138989 /* SignUpVC.m in Sources */,
+				29B245D21B9425BC0040C306 /* RecomendationBaseClass.m in Sources */,
+				29B245D81B9425BC0040C306 /* RecomendationNotifications.m in Sources */,
 				29C5969B1B8F062000138989 /* DashboardHomeVC.m in Sources */,
+				29B245D11B9425BC0040C306 /* RecomendationActivities.m in Sources */,
+				2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */,
+				29B245DC1B9426510040C306 /* ViewController.m in Sources */,
 				29C596861B8EEF2500138989 /* HomeVC.m in Sources */,
+				29B245E21B9426C40040C306 /* LoginService.m in Sources */,
+				29B245D61B9425BC0040C306 /* RecomendationExperiences.m in Sources */,
+				29B245D41B9425BC0040C306 /* RecomendationDiscover.m in Sources */,
 				29C5968E1B8F051400138989 /* ExploreVC.m in Sources */,
 				29C5965D1B8DBEE000138989 /* main.m in Sources */,
 			);
