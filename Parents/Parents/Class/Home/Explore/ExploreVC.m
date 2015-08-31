@@ -5,12 +5,26 @@
 //  Created by Karthikeyan on 8/27/15.
 //  Copyright (c) 2015 Karthikeyan. All rights reserved.
 //
+/*
+ Explore VC class is equiped with table and collection views. the collection view is loaded in every row of the tableview to providing the user to flexibally scroll in both the ways .
+ where the every row in the list is equped with multiple items which needs horizontal scrolling
 
+ */
 #import "ExploreVC.h"
 #import <AFNetworking/AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
-#import "ExploreDataModel.h"
+#import <AFNetworking/AFNetworking.h>
+#import "AppUtils.h"
 
+//Model Classes
+/* RecomendationBaseClass is the model class. it was created based on the
+ response from the recomendation API. The model is generated using the
+ JSON accelerator application
+ 
+ */
+#import "RecomendationBaseClass.h"
+#import "ExploreDataModel.h"
+UIButton *selectedChild;
 @interface ExploreVC ()
 
 @end
@@ -19,9 +33,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Fetch the information from server in the background
+    // AF uses the operation que, so by default the operation will be handled in the background
     [self loadInformationFromServer];
     
-      // Do any additional setup after loading the view.
 }
 -(void)viewWillLayoutSubviews{
     [self SetHeaderView];
@@ -30,53 +46,69 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)loadInformationFromServer{
-    
-    NSString *string = [NSString stringWithFormat:@"http://192.168.0.36:8080/RESTServices/recommendations"];
-    NSURL *url = [NSURL URLWithString:string];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
-        [tbl_exlpore reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving information"
-                                                            message:[error localizedDescription]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }];
-    
-    // 5
-    [operation start];
-}
 -(void)SetHeaderView{
-    int x=10;
-    int y=10;
+    int x=100;
+    int y=0;
     for (int i = 0; i<3; i++) {
         UIView *vw_thumbs=[[UIView alloc]init];
-        
-        [vw_thumbs setFrame:CGRectMake((i*90)+x, y, 70, 70)];
-        
-        [vw_thumbs.layer setCornerRadius:35];
-        [vw_thumbs setBackgroundColor:[UIColor grayColor]];
+        // x denotes the initial skip region
+        [vw_thumbs setFrame:CGRectMake(x + (i*115), y, 115, 115)];
+        [vw_thumbs setBackgroundColor:[UIColor clearColor]];
+        //Profile Image of children
 
+        UIButton *button_image=[[UIButton alloc]init];
+        [button_image setImage:[UIImage imageNamed:@"avatar.png"]forState:UIControlStateNormal];
+        [button_image setFrame:CGRectMake(10, 10, 95, 95)];
+        [button_image.layer setCornerRadius:button_image.frame.size.height/2];
+        [button_image setContentMode:UIViewContentModeScaleAspectFill];
+        [button_image setClipsToBounds:YES];
+        [button_image setTag:13+i];
+        [button_image addTarget:self action:@selector(FilterExploreData:) forControlEvents:UIControlEventTouchUpInside];
+        [vw_thumbs addSubview:button_image];
         [scr_header addSubview:vw_thumbs];
-        [scr_header setContentSize:CGSizeMake((i*100 )+100, 70)];
+        [scr_header setContentSize:CGSizeMake((i*115 )+400, 115)];
         
     }
-    [scr_header setPagingEnabled:YES];
+    [scr_header setPagingEnabled:NO];
     
-   [scr_header setFrame:CGRectMake((self.view.frame.size.width/2)-35 , scr_header.frame.origin.y, 90, 90)];
+//   [scr_header setFrame:CGRectMake((self.view.frame.size.width/2)-35 , scr_header.frame.origin.y, 90, 90)];
     [tbl_exlpore setFrame:CGRectMake(tbl_exlpore.frame.origin.x, vw_header.frame.size.height+vw_header.frame.origin.y-20, self.view.frame.size.width, tbl_exlpore.frame.size.height)];
       
+}
+-(void)FilterExploreData:(UIButton *)sender{
+    if(selectedChild==nil)
+        selectedChild=sender;
+    if(selectedChild !=nil)
+    {
+        // Resizing the previous selected button to un slected state
+        // before assigning the new sleection, the existing is considered as old one and its properties are updated
+        CGRect frame=selectedChild.frame;
+        frame.origin.x=10;
+        frame.origin.y=10;
+        frame.size.height=95;
+        frame.size.width=95;
+        [selectedChild setFrame:frame];
+        [selectedChild.layer setCornerRadius:selectedChild.frame.size.height/2];
+        [selectedChild.layer setBorderWidth:1.0];
+
+        selectedChild=sender;
+        // Enlarging the selected image a bit higher for identification
+        // The selected child willnow holds the newely selected button
+
+        frame=selectedChild.frame;
+        frame.origin.x=7;
+        frame.origin.y=7;
+        frame.size.height=100;
+        frame.size.width=100;
+        
+        
+        [selectedChild setFrame:frame];
+        [selectedChild.layer setCornerRadius:selectedChild.frame.size.height/2];
+
+        [selectedChild.layer setBorderWidth:6.0];
+        [selectedChild.layer setBorderColor:[UIColor whiteColor].CGColor];
+        
+    }
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     [tableView setBackgroundColor:[UIColor clearColor]];
@@ -107,13 +139,13 @@
     
     switch (indexPath.section) {
         case 0:
-            return 240;
+            return 260;
             break;
         case 1:
-            return 120;
+            return 135;
             break;
         case 2:
-            return 100;
+            return 120;
             break;
         default:
             break;
@@ -128,7 +160,7 @@
     UIView *bg_header=[[UIView alloc]init];
     [bg_header setBackgroundColor:[UIColor colorWithRed:246/255.0 green:137/255.0 blue:37/255.0 alpha:1]];
     
-    [bg_header setFrame:CGRectMake(-15, 6, 150, 38)];
+    [bg_header setFrame:CGRectMake(-21, 6, 151, 42)];
     
     [bg_header.layer setCornerRadius:(bg_header.frame.size.height/2)];
     
@@ -148,12 +180,11 @@
             break;
     }
 
-    [lbl_header setFont:[UIFont systemFontOfSize:14]];
+    [lbl_header setFont:[UIFont systemFontOfSize:12]];
     [lbl_header setTextColor:[UIColor whiteColor]];
     [lbl_header setTextAlignment:NSTextAlignmentRight];
     
-    
-    [lbl_header setFrame:CGRectMake(10, 10, 110, 25)];
+    [lbl_header setFrame:CGRectMake(0, 13, 118, 25)];
     [vw_tblheader addSubview:bg_header];
     
     [vw_tblheader addSubview:lbl_header];
@@ -162,60 +193,109 @@
     
 }
 
-#pragma mark Collection View - for every section
+#pragma mark Collection View - for every category
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     [collectionView setBackgroundView:nil];
     [collectionView setBackgroundColor:[UIColor clearColor]];
-    
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 4;
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-  __weak  UIImageView *img=(UIImageView*)[cell viewWithTag:10];
+    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];;
+    
+    
+    if(cell != nil)
+    {
+  
     switch (collectionView.tag) {
         case 0:
         {
-            NSURL *url = [NSURL URLWithString:@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png"];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-
-            [img setImageWithURLRequest:request
-                                  placeholderImage:[UIImage imageNamed:@"Explore.png"]
-                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                               
-                                               [img setImage: image];
-                                               [img setNeedsLayout];
-                                               } failure:nil];
+            cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
+            
+            //header text
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:13] setText:[NSString stringWithFormat:@"Expert talk by Sam Adams"]];
+            
+            // Description Text
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:14] setText:[NSString stringWithFormat:@"Keep an eye out for developmental milestones for your little one "]];
+            
+            __weak  UIImageView *img=(UIImageView*)[[cell viewWithTag:1] viewWithTag:10];
+            // FETCH THE IMAGE FROM REMOTE,, BUT IT GENERATES REQUEST EVERY TIME, IT NEED TO BE HANDLED
+//            NSURL *url = [NSURL URLWithString:@"https://imagin8ors-dev.s3-us-west-2.amazonaws.com/test/explore.png"];
+//            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//            [img setImageWithURLRequest:request
+//                       placeholderImage:[UIImage imageNamed:@"Explore.png"]
+//                                success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+//                                               [img setImage: image];
+//                                               [img setNeedsLayout];
+//                                               } failure:nil];
         }
             break;
-            
         case 1:
-            [img setImage:[UIImage imageNamed:@"recomend.png"]];
+        {
+            cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecomendedCell" forIndexPath:indexPath];
+            
+            //Price display
+            [[[cell viewWithTag:1]viewWithTag:13].layer setCornerRadius:3];
+            [(UILabel *)[[[cell viewWithTag:1]viewWithTag:13] viewWithTag:1] setText:[NSString stringWithFormat: @"%@ %@",@"$",@"1,99"]];
+            
+            // Description Text
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:11] setText:[NSString stringWithFormat:@"Make Your Own Autobot"]];
+            
+            // Experience or activity
+            [[[cell viewWithTag:1] viewWithTag:12].layer setCornerRadius:2];
+            [(UILabel *)[[[cell viewWithTag:1] viewWithTag:12] viewWithTag:1] setText:[NSString stringWithFormat:@"Activity"]];
+            
+            //Bg image
+            UIImageView *img_bg=(UIImageView *)[[cell viewWithTag:1] viewWithTag:10];
+            [img_bg setImage:[UIImage imageNamed:@"recomend.png"]];
+            
+            
+            
+        }
             break;
         case 2:
-            [img setImage:[UIImage imageNamed:@"EventPlaner.png"]];
+        {
+            cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"EventCell" forIndexPath:indexPath];
+            // Date / month display
+            [[(UIView *)[cell viewWithTag:1] viewWithTag:5].layer setCornerRadius:5];
+            //Date
+            [(UILabel *)[[[cell viewWithTag:1] viewWithTag:5] viewWithTag:1] setText:[NSString stringWithFormat:@"25"]];
+            //Month
+            [(UILabel *)[[[cell viewWithTag:1] viewWithTag:5] viewWithTag:2] setText:[NSString stringWithFormat:@"SEP"]];
+            
+            // Description Text
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:11] setText:[NSString stringWithFormat:@"Exploration at the science Museum"]];
+            // Location Text
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:12] setText:[NSString stringWithFormat:@"Singapore"]];
+
+            //Bg image
+            UIImageView *img_bg=(UIImageView *)[[cell viewWithTag:1] viewWithTag:10];
+            [img_bg setImage:[UIImage imageNamed:@"EventPlaner.png"]];
+        }
             break;
         default:
             break;
     }
+        [cell setClipsToBounds:YES];
     [cell.layer setCornerRadius:10];
-    
+        
+    }
     return  cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     switch (collectionView.tag) {
         case 0:
-    return CGSizeMake(240, 240);
+    return CGSizeMake(310, 240);
             break;
             case 1:
-                return CGSizeMake(200, 120);
+                return CGSizeMake(180, 115);
             break;
         case 2:
-            return CGSizeMake(260, 100);
+            return CGSizeMake(310, 100);
             break;
         default:
             break;
@@ -232,5 +312,37 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark - Server Communiccation
+
+-(void)loadInformationFromServer{
+    
+    NSString *string = [NSString stringWithFormat:@"http://192.168.0.36:8080/RESTServices/recommendations"];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    if([[AFNetworkReachabilityManager sharedManager] isReachable])
+    {
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.responseSerializer = [AFJSONResponseSerializer serializer];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
+            [tbl_exlpore reloadData];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Recommendations"
+                                                                message:[error localizedDescription]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }];
+        
+        [operation start];
+    }
+    else
+    {
+//        [AppUtils showAlertMessage:@"Server not Reachable " inView:self];
+        
+    }
+}
 
 @end

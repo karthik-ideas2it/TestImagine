@@ -22,6 +22,8 @@
 		29A1D8271B942A57003AEA54 /* Shop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D81A1B942A57003AEA54 /* Shop_icon.png */; };
 		29A1D8281B942A57003AEA54 /* Shop_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D81B1B942A57003AEA54 /* Shop_selected.png */; };
 		29A1D8291B942A57003AEA54 /* Shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D81C1B942A57003AEA54 /* Shop.png */; };
+		29A1D82E1B9434F5003AEA54 /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D82D1B9434F5003AEA54 /* AppUtils.m */; };
+		29A1D8301B945200003AEA54 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D82F1B945200003AEA54 /* avatar.png */; };
 		29B245D11B9425BC0040C306 /* RecomendationActivities.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C01B9425BC0040C306 /* RecomendationActivities.m */; };
 		29B245D21B9425BC0040C306 /* RecomendationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C21B9425BC0040C306 /* RecomendationBaseClass.m */; };
 		29B245D31B9425BC0040C306 /* RecomendationChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C41B9425BC0040C306 /* RecomendationChildren.m */; };
@@ -79,6 +81,10 @@
 		29A1D81A1B942A57003AEA54 /* Shop_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shop_icon.png; path = Images/Shop_icon.png; sourceTree = "<group>"; };
 		29A1D81B1B942A57003AEA54 /* Shop_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shop_selected.png; path = Images/Shop_selected.png; sourceTree = "<group>"; };
 		29A1D81C1B942A57003AEA54 /* Shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shop.png; path = Images/Shop.png; sourceTree = "<group>"; };
+		29A1D82B1B942E17003AEA54 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Constants/Config.h; sourceTree = "<group>"; };
+		29A1D82C1B9434F5003AEA54 /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppUtils.h; path = Parents/Class/Utility/AppUtils.h; sourceTree = SOURCE_ROOT; };
+		29A1D82D1B9434F5003AEA54 /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppUtils.m; path = Parents/Class/Utility/AppUtils.m; sourceTree = SOURCE_ROOT; };
+		29A1D82F1B945200003AEA54 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		29B245BE1B9425BC0040C306 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
 		29B245BF1B9425BC0040C306 /* RecomendationActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationActivities.h; sourceTree = "<group>"; };
 		29B245C01B9425BC0040C306 /* RecomendationActivities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationActivities.m; sourceTree = "<group>"; };
@@ -164,6 +170,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		29A1D82A1B942DFD003AEA54 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				29A1D82B1B942E17003AEA54 /* Config.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		29B245BA1B94251E0040C306 /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +199,7 @@
 		29B245BC1B9425470040C306 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				29A1D82A1B942DFD003AEA54 /* Constants */,
 				FB98FEF41B907528007F5C4D /* Utility */,
 				29C5968A1B8F04E900138989 /* Home */,
 			);
@@ -345,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				29A1D8101B942A57003AEA54 /* BottomBar.png */,
+				29A1D82F1B945200003AEA54 /* avatar.png */,
 				29A1D8111B942A57003AEA54 /* Comm_icon.png */,
 				29A1D8121B942A57003AEA54 /* Dash_icon.png */,
 				29A1D8131B942A57003AEA54 /* EventPlaner.png */,
@@ -396,6 +412,8 @@
 			children = (
 				29B245DD1B9426B90040C306 /* AppSingleton.h */,
 				29B245DE1B9426B90040C306 /* AppSingleton.m */,
+				29A1D82C1B9434F5003AEA54 /* AppUtils.h */,
+				29A1D82D1B9434F5003AEA54 /* AppUtils.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -495,6 +513,7 @@
 				29A1D8251B942A57003AEA54 /* recomend.png in Resources */,
 				29A1D8201B942A57003AEA54 /* EventPlaner.png in Resources */,
 				29A1D81E1B942A57003AEA54 /* Comm_icon.png in Resources */,
+				29A1D8301B945200003AEA54 /* avatar.png in Resources */,
 				29A1D8261B942A57003AEA54 /* selection.png in Resources */,
 				29A1D8271B942A57003AEA54 /* Shop_icon.png in Resources */,
 				29C596681B8DBEE000138989 /* Images.xcassets in Resources */,
@@ -565,6 +584,7 @@
 				2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */,
 				29B245DC1B9426510040C306 /* ViewController.m in Sources */,
 				29C596861B8EEF2500138989 /* HomeVC.m in Sources */,
+				29A1D82E1B9434F5003AEA54 /* AppUtils.m in Sources */,
 				29A1D80F1B942A18003AEA54 /* LoginService.m in Sources */,
 				29B245D61B9425BC0040C306 /* RecomendationExperiences.m in Sources */,
 				29B245D41B9425BC0040C306 /* RecomendationDiscover.m in Sources */,

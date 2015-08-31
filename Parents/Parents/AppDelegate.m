@@ -8,11 +8,8 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import "ExploreVC.h"
-#import "MessagesHomeVC.h"
-#import "CommunityHomeVC.h"
-#import "DashboardHomeVC.h"
-#import "ShopHomeVC.h"
+#import <AFNetworking/AFNetworking.h>
+
 @interface AppDelegate ()
 
 @end
@@ -30,6 +27,7 @@
     
     AWSServiceManager.defaultServiceManager.defaultServiceConfiguration = configuration;
     
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
