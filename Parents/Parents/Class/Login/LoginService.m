@@ -21,8 +21,6 @@
         //        NSLog(@"%@",objAFManager.requestSerializer);
         //        [objAFManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
         NSURLSessionConfiguration *objSessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-        //        objSessionConfig.timeoutIntervalForRequest = 25;
-        //        objSessionConfig.timeoutIntervalForResource = 25;
         _networkSession = [NSURLSession sessionWithConfiguration:objSessionConfig delegate:nil delegateQueue:nil];
     }
     return self;

@@ -61,6 +61,8 @@
 		29C5969B1B8F062000138989 /* DashboardHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5969A1B8F062000138989 /* DashboardHomeVC.m */; };
 		29C5969E1B8F064100138989 /* ShopHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5969D1B8F064100138989 /* ShopHomeVC.m */; };
 		9211C3A3C427E8E6CDD67CCC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4780BC81102B7D758096A04A /* libPods.a */; };
+		FB78A7EC1B982392007B1942 /* BurgerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB78A7EB1B982392007B1942 /* BurgerView.m */; };
+		FB78A7EF1B9823EB007B1942 /* BurgerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB78A7EE1B9823EB007B1942 /* BurgerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,10 @@
 		4780BC81102B7D758096A04A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85CF410463D1BB17994E08B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E4052828A70E9B1B5032D893 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FB78A7EA1B982392007B1942 /* BurgerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerView.h; sourceTree = "<group>"; };
+		FB78A7EB1B982392007B1942 /* BurgerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerView.m; sourceTree = "<group>"; };
+		FB78A7ED1B9823EB007B1942 /* BurgerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BurgerVC.h; sourceTree = "<group>"; };
+		FB78A7EE1B9823EB007B1942 /* BurgerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BurgerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +363,7 @@
 		29C5968A1B8F04E900138989 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FB78A7E81B982392007B1942 /* Burger */,
 				29D7A9F31B905A7200C4D406 /* Login */,
 				29C596921B8F05BF00138989 /* Shop */,
 				29C596911B8F05B100138989 /* Dashboard */,
@@ -473,6 +480,26 @@
 				4780BC81102B7D758096A04A /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB78A7E81B982392007B1942 /* Burger */ = {
+			isa = PBXGroup;
+			children = (
+				FB78A7E91B982392007B1942 /* Views */,
+				FB78A7ED1B9823EB007B1942 /* BurgerVC.h */,
+				FB78A7EE1B9823EB007B1942 /* BurgerVC.m */,
+			);
+			name = Burger;
+			path = Class/Home/Burger;
+			sourceTree = "<group>";
+		};
+		FB78A7E91B982392007B1942 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB78A7EA1B982392007B1942 /* BurgerView.h */,
+				FB78A7EB1B982392007B1942 /* BurgerView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FB98FEF41B907528007F5C4D /* Utility */ = {
@@ -644,6 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B245D51B9425BC0040C306 /* RecomendationEvents.m in Sources */,
+				FB78A7EF1B9823EB007B1942 /* BurgerVC.m in Sources */,
 				29B245DF1B9426B90040C306 /* AppSingleton.m in Sources */,
 				29B245D71B9425BC0040C306 /* RecomendationMarketPlaces.m in Sources */,
 				29C596951B8F05E300138989 /* MessagesHomeVC.m in Sources */,
@@ -667,6 +695,7 @@
 				29B245D61B9425BC0040C306 /* RecomendationExperiences.m in Sources */,
 				29B245D41B9425BC0040C306 /* RecomendationDiscover.m in Sources */,
 				29C5968E1B8F051400138989 /* ExploreVC.m in Sources */,
+				FB78A7EC1B982392007B1942 /* BurgerView.m in Sources */,
 				294D410B1B95808100C83ADF /* ELDiscoverListCell.m in Sources */,
 				29C5965D1B8DBEE000138989 /* main.m in Sources */,
 			);
