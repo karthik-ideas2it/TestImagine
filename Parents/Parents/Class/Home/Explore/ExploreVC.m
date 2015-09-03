@@ -36,15 +36,16 @@ UIView *SelectedObject;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self SetHeaderView];
 
     // Fetch the information from server in the background
     // AF uses the operation que, so by default the operation will be handled in the background
 //    [self loadInformationFromServer];
-    
+    [self SetHeaderView];
+
 }
 
 -(void)viewWillLayoutSubviews{
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -55,37 +56,43 @@ UIView *SelectedObject;
     
     float x=((self.view.frame.size.width - 300)/2);  // initial Skip region
     int y=32;   // Initial y position
+//    NSData *archivedViewData = [NSKeyedArchiver archivedDataWithRootObject: [scr_header viewWithTag:2]];
+    [scr_header reloadInputViews];
+    
     for (int i = 0; i<[ChildNames count]; i++) {
         //Profile Image of children
+        UIView *vw=[[UIView alloc]initWithFrame:CGRectMake((i*100)+x, y, 100, 100)];
+        [vw setBackgroundColor:[UIColor clearColor]];
+        UILabel *lbl_Name=[[UILabel alloc]initWithFrame:CGRectMake(0, 8, 100, 21)];
+        [lbl_Name setFont:[UIFont systemFontOfSize:13]];
+        [lbl_Name setTextAlignment:NSTextAlignmentCenter];
         
-        NSData *archivedViewData = [NSKeyedArchiver archivedDataWithRootObject: [scr_header viewWithTag:2]];
-        UIView *clone = (UIView *)[NSKeyedUnarchiver unarchiveObjectWithData:archivedViewData];
-        [clone setHidden:NO];
+        [lbl_Name setText:[NSString stringWithFormat:@"%@",[ChildNames objectAtIndex:i]]];
+        [vw addSubview:lbl_Name];
+        UIButton *btn_img=[[UIButton alloc]initWithFrame:CGRectMake(20, 35, 60, 60)];
+        [btn_img setTag:21];
+        [btn_img setImage:[UIImage imageNamed:@"avatar.png"] forState:UIControlStateNormal];
+        [btn_img addTarget:self action:@selector(FilterExploreData:) forControlEvents:UIControlEventTouchUpInside];
         
-        [clone setFrame:CGRectMake(x + (i*100), y, clone.frame.size.width  , clone.frame.size.height)];
-        [(UIButton *)[clone viewWithTag:22] addTarget:self action:@selector(FilterExploreData:) forControlEvents:UIControlEventTouchUpInside];
-        [((UIImageView *)[clone viewWithTag:21]).layer  setCornerRadius:30];
-        [(UILabel *)[clone viewWithTag:20] setText:[NSString stringWithFormat:@"%@",[ChildNames objectAtIndex:i]]];
-        
-        [scr_header addSubview:clone];
-        if(i==1) {SelectedObject = clone; CenterFrame = SelectedObject.frame; }
-//        [scr_header setContentSize:CGSizeMake((i*114 )+400, 114)];
+        [vw addSubview:btn_img];
+        [scr_header addSubview:vw];
+        if(i==1) {SelectedObject = vw; CenterFrame = SelectedObject.frame; }
+
         
     }
-    [scr_header setPagingEnabled:NO];
     
     [tbl_exlpore setFrame:CGRectMake(tbl_exlpore.frame.origin.x, vw_header.frame.size.height+vw_header.frame.origin.y, self.view.frame.size.width, tbl_exlpore.frame.size.height)];
       
 }
 -(IBAction)FilterExploreData:(UIButton *)sender{
     
-    OldFrame = [[sender superview] viewWithTag:21].frame;
+    OldFrame = sender.frame;
     UIView *curView=[sender superview];
     CGRect tFrame = curView.frame;
     // Moving the center object to the selected object location
     [curView setFrame:((UIView *)SelectedObject).frame];
     UIView *parentView = SelectedObject;
-    UIImageView *img_avatar = (UIImageView *)[parentView viewWithTag:21];
+    UIButton *img_avatar = (UIButton *)[parentView viewWithTag:21];
     [img_avatar setFrame:OldFrame];
     [img_avatar.layer setCornerRadius:img_avatar.frame.size.height/2];
     [img_avatar.layer setBorderWidth:0];
@@ -98,7 +105,7 @@ UIView *SelectedObject;
     SelectedObject = curView;
     
     parentView = SelectedObject;
-    img_avatar = (UIImageView *)[parentView viewWithTag:21];
+    img_avatar = (UIButton *)[parentView viewWithTag:21];
     [img_avatar.layer setBorderWidth:5.0];
     [img_avatar.layer setBorderColor:[UIColor whiteColor].CGColor];
     [img_avatar setFrame:CGRectMake(15, 36, 70, 70)];
