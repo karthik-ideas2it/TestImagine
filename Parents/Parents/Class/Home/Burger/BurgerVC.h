@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "BurgerView.h"
 
 @interface BurgerVC : ViewController
+@property (weak, nonatomic) IBOutlet BurgerView *objBurgerView;
 
 @end

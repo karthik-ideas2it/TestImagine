@@ -16,7 +16,7 @@
 #define OPTIONS_VIEW_OFFSET          5
 #define FAMILY_MEMBERS_VIEW_VALUE    40
 #define OFFSET_VALUE_FOR_OPTIONS_BUTTONS_TAG 100
-#define ANIMATION_DURATION           3
+#define ANIMATION_DURATION           .4
 
 static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
 
@@ -46,7 +46,7 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
     circleRect = CGRectIntegral(CGRectInset(self.bounds, (FAMILY_MEMBERS_VIEW_VALUE/2) + OPTIONS_VIEW_OFFSET, (FAMILY_MEMBERS_VIEW_VALUE/2) + OPTIONS_VIEW_OFFSET));
     familyCount = count;
     self.initialViewAngles = [NSMutableArray array];
-    noOfOptions = 1;
+    noOfOptions = 3;
     
     float curAngle = DEGREES_TO_RADIANS(FAMILY_MEMBERS_START_ANGLE); // here the angle is clockwise
     float incAngle = DEGREES_TO_RADIANS(INCREMENTAL_ANGLE);

@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.objBurgerView setupViewsWithFamilyCount:5];
     // Do any additional setup after loading the view.
 }
 
