@@ -18,7 +18,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
 #import <AFNetworking/AFNetworking.h>
-
+#import <QuartzCore/QuartzCore.h>
 //Model Classes
 /* RecomendationBaseClass is the model class. it was created based on the response from the recomendation API. The model is generated using the JSON accelerator application
  */
@@ -36,12 +36,10 @@ UIView *SelectedObject;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     // Fetch the information from server in the background
     // AF uses the operation que, so by default the operation will be handled in the background
 //    [self loadInformationFromServer];
     [self SetHeaderView];
-
 }
 
 -(void)viewWillLayoutSubviews{
@@ -73,11 +71,9 @@ UIView *SelectedObject;
         [btn_img setTag:21];
         [btn_img setImage:[UIImage imageNamed:@"avatar.png"] forState:UIControlStateNormal];
         [btn_img addTarget:self action:@selector(FilterExploreData:) forControlEvents:UIControlEventTouchUpInside];
-        
         [vw addSubview:btn_img];
         [scr_header addSubview:vw];
         if(i==1) {SelectedObject = vw; CenterFrame = SelectedObject.frame; }
-
         
     }
     
@@ -86,31 +82,32 @@ UIView *SelectedObject;
 }
 -(IBAction)FilterExploreData:(UIButton *)sender{
     
-    OldFrame = sender.frame;
-    UIView *curView=[sender superview];
-    CGRect tFrame = curView.frame;
-    // Moving the center object to the selected object location
-    [curView setFrame:((UIView *)SelectedObject).frame];
-    UIView *parentView = SelectedObject;
-    UIButton *img_avatar = (UIButton *)[parentView viewWithTag:21];
-    [img_avatar setFrame:OldFrame];
-    [img_avatar.layer setCornerRadius:img_avatar.frame.size.height/2];
-    [img_avatar.layer setBorderWidth:0];
-    [parentView setFrame:CGRectMake(parentView.frame.origin.x, 32, parentView.frame.size.width, parentView.frame.size.height)];
+    [UIView animateWithDuration:0.2 animations:^{
+        OldFrame = sender.frame;
+        UIView *curView=[sender superview];
+        CGRect tFrame = curView.frame;
+        // Moving the center object to the selected object location
+        [curView setFrame:((UIView *)SelectedObject).frame];
+        UIView *parentView = SelectedObject;
+        UIButton *img_avatar = (UIButton *)[parentView viewWithTag:21];
+        [img_avatar setFrame:OldFrame];
+        [img_avatar.layer setCornerRadius:img_avatar.frame.size.height/2];
+        [img_avatar.layer setBorderWidth:0];
+        [parentView setFrame:CGRectMake(parentView.frame.origin.x, 32, parentView.frame.size.width, parentView.frame.size.height)];
+        
+        // Moving the object to center , and changing theimage style
+        [SelectedObject setFrame:tFrame];
+        // Selected object holds the Current selcted object
+        SelectedObject = curView;
+        parentView = SelectedObject;
+        img_avatar = (UIButton *)[parentView viewWithTag:21];
+        [img_avatar.layer setBorderWidth:5.0];
+        [img_avatar.layer setBorderColor:[UIColor whiteColor].CGColor];
+        [img_avatar setFrame:CGRectMake(15, 36, 70, 70)];
+        [img_avatar.layer setCornerRadius:img_avatar.frame.size.height/2];
+        [parentView setFrame:CGRectMake(parentView.frame.origin.x, 0, parentView.frame.size.width, parentView.frame.size.height)];
+    }];
     
-
-    // Moving the object to center , and changing theimage style
-    [SelectedObject setFrame:tFrame];
- // Selected object holds the Current selcted object
-    SelectedObject = curView;
-    
-    parentView = SelectedObject;
-    img_avatar = (UIButton *)[parentView viewWithTag:21];
-    [img_avatar.layer setBorderWidth:5.0];
-    [img_avatar.layer setBorderColor:[UIColor whiteColor].CGColor];
-    [img_avatar setFrame:CGRectMake(15, 36, 70, 70)];
-    [img_avatar.layer setCornerRadius:img_avatar.frame.size.height/2];
-    [parentView setFrame:CGRectMake(parentView.frame.origin.x, 0, parentView.frame.size.width, parentView.frame.size.height)];
     
 }
 
@@ -183,18 +180,14 @@ UIView *SelectedObject;
         default:
             break;
     }
-
     [lbl_header setFont:[UIFont systemFontOfSize:18]];
     [lbl_header setTextColor:[UIColor colorWithRed:88.0/255.0 green:43/255.0 blue:133/225.0 alpha:1.0]];
     [lbl_header setTextAlignment:NSTextAlignmentRight];
     
     [lbl_header setFrame:CGRectMake(0, 6, self.view.frame.size.width, 40)];
     [lbl_header setTextAlignment:NSTextAlignmentCenter];
-    
     [vw_tblheader addSubview:bg_header];
-    
     [vw_tblheader addSubview:lbl_header];
-    
     return vw_tblheader;
     
 }
@@ -204,11 +197,8 @@ UIView *SelectedObject;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *vw_tblfooter=[[UIView alloc]init];
-    
     [vw_tblfooter setBackgroundColor:[UIColor clearColor]];
-    
     return vw_tblfooter;
-    
 }
 
 #pragma mark Collection View - for every category
@@ -224,7 +214,6 @@ UIView *SelectedObject;
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];;
     
-    
     if(cell != nil)
     {
   
@@ -233,11 +222,18 @@ UIView *SelectedObject;
         {
             cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
             
+            //Category label
+
+            UILabel *lbl=(UILabel *)[[cell viewWithTag:1] viewWithTag:1002];
+            [lbl setFrame:CGRectMake(10, 10, 150, 15)];
+            [lbl.layer setCornerRadius:4.0];
+             [[[cell viewWithTag:1] viewWithTag:12].layer setCornerRadius:3];
+            
             //header text
-            [(UILabel *)[[cell viewWithTag:1] viewWithTag:13] setText:[NSString stringWithFormat:@"Expert talk by Sam Adams"]];
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:14] setText:[NSString stringWithFormat:@"Sam Adams"]];
             
             // Description Text
-            [(UILabel *)[[cell viewWithTag:1] viewWithTag:14] setText:[NSString stringWithFormat:@"Keep an eye out for developmental milestones for your little one "]];
+            [(UILabel *)[[cell viewWithTag:1] viewWithTag:13] setText:[NSString stringWithFormat:@"Keep an eye out for developmental milestones for your little one "]];
             
 //           UIImageView *img=(UIImageView*)[[cell viewWithTag:1] viewWithTag:10];
 //            [img removeFromSuperview];
@@ -266,7 +262,7 @@ UIView *SelectedObject;
             [(UILabel *)[[cell viewWithTag:1] viewWithTag:11] setText:[NSString stringWithFormat:@"Make Your Own Autobot"]];
             
             // Experience or activity
-            [[[cell viewWithTag:1] viewWithTag:12].layer setCornerRadius:2];
+            [[[cell viewWithTag:1] viewWithTag:12].layer setCornerRadius:3];
             [(UILabel *)[[[cell viewWithTag:1] viewWithTag:12] viewWithTag:1] setText:[NSString stringWithFormat:@"Activity"]];
             
             //Bg image
@@ -332,7 +328,7 @@ UIView *SelectedObject;
     if([segue.identifier isEqualToString:@""])
     {
         //Discover
-        ExploreListVC *explv = (ExploreListVC *)segue.destinationViewController;
+//        ExploreListVC *explv = (ExploreListVC *)segue.destinationViewController;
         
         
         

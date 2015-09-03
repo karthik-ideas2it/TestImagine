@@ -17,6 +17,7 @@
 		2987956F1B9816C200FA468F /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2987956D1B9816C200FA468F /* filter.png */; };
 		298795721B98189A00FA468F /* pieMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 298795701B98189A00FA468F /* pieMenu.png */; };
 		298795731B98189A00FA468F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 298795711B98189A00FA468F /* search.png */; };
+		298795761B9849F500FA468F /* ExploreDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 298795751B9849F500FA468F /* ExploreDetailVC.m */; };
 		2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2994C60F1B9082AD00742A93 /* ExploreDataModel.m */; };
 		29A1D80F1B942A18003AEA54 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D80E1B942A18003AEA54 /* LoginService.m */; };
 		29A1D81D1B942A57003AEA54 /* BottomBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D8101B942A57003AEA54 /* BottomBar.png */; };
@@ -88,6 +89,8 @@
 		2987956D1B9816C200FA468F /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = Images/filter.png; sourceTree = "<group>"; };
 		298795701B98189A00FA468F /* pieMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pieMenu.png; path = Images/pieMenu.png; sourceTree = "<group>"; };
 		298795711B98189A00FA468F /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Images/search.png; sourceTree = "<group>"; };
+		298795741B9849F500FA468F /* ExploreDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreDetailVC.h; path = Class/Home/Explore/ExploreDetailVC.h; sourceTree = "<group>"; };
+		298795751B9849F500FA468F /* ExploreDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreDetailVC.m; path = Class/Home/Explore/ExploreDetailVC.m; sourceTree = "<group>"; };
 		2994C60E1B9082AD00742A93 /* ExploreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreDataModel.h; path = Class/Home/Explore/ExploreDataModel.h; sourceTree = "<group>"; };
 		2994C60F1B9082AD00742A93 /* ExploreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreDataModel.m; path = Class/Home/Explore/ExploreDataModel.m; sourceTree = "<group>"; };
 		29A1D80D1B942A18003AEA54 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginService.h; path = Class/Login/LoginService.h; sourceTree = "<group>"; };
@@ -379,12 +382,14 @@
 		29C5968B1B8F04F000138989 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				294D410D1B9580B100C83ADF /* Cells */,
 				294D410F1B9580C900C83ADF /* Model */,
 				29C5968C1B8F051300138989 /* ExploreVC.h */,
 				29C5968D1B8F051400138989 /* ExploreVC.m */,
 				29A1D8681B956B3B003AEA54 /* ExploreListVC.h */,
 				294D41141B959F5200C83ADF /* ExploreListVC.m */,
-				294D410D1B9580B100C83ADF /* Cells */,
+				298795741B9849F500FA468F /* ExploreDetailVC.h */,
+				298795751B9849F500FA468F /* ExploreDetailVC.m */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -689,6 +694,7 @@
 				2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */,
 				29B245DC1B9426510040C306 /* ViewController.m in Sources */,
 				29C596861B8EEF2500138989 /* HomeVC.m in Sources */,
+				298795761B9849F500FA468F /* ExploreDetailVC.m in Sources */,
 				294D41131B959C3A00C83ADF /* SpringCollectionViewFlowLayout.m in Sources */,
 				29A1D82E1B9434F5003AEA54 /* AppUtils.m in Sources */,
 				29A1D80F1B942A18003AEA54 /* LoginService.m in Sources */,

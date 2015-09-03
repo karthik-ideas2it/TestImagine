@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExploreListVC : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ExploreListVC : UIViewController <UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate>
 {
 #pragma mark Public variables
     NSString *str_type;
