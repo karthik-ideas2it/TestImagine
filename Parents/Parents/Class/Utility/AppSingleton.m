@@ -20,6 +20,9 @@
     });
     return sharedInstance;
 }
++(void)showAlertMessage:(NSString *)Message{
+
+}
 
 
 @end

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		294D410B1B95808100C83ADF /* ELDiscoverListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 294D41091B95808100C83ADF /* ELDiscoverListCell.m */; };
+		294D410C1B95808100C83ADF /* ELDiscoverListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294D410A1B95808100C83ADF /* ELDiscoverListCell.xib */; };
+		294D41131B959C3A00C83ADF /* SpringCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 294D41121B959C3A00C83ADF /* SpringCollectionViewFlowLayout.m */; };
+		294D41151B959F5200C83ADF /* ExploreListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 294D41141B959F5200C83ADF /* ExploreListVC.m */; };
+		294D41171B96D06E00C83ADF /* Explore_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 294D41161B96D06E00C83ADF /* Explore_bg.png */; };
+		2987956B1B98159300FA468F /* 03_A_Explore_Discover_View_All.png in Resources */ = {isa = PBXBuildFile; fileRef = 2987956A1B98159300FA468F /* 03_A_Explore_Discover_View_All.png */; };
+		2987956E1B9816C200FA468F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2987956C1B9816C200FA468F /* back.png */; };
+		2987956F1B9816C200FA468F /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2987956D1B9816C200FA468F /* filter.png */; };
+		298795721B98189A00FA468F /* pieMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 298795701B98189A00FA468F /* pieMenu.png */; };
+		298795731B98189A00FA468F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 298795711B98189A00FA468F /* search.png */; };
 		2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2994C60F1B9082AD00742A93 /* ExploreDataModel.m */; };
 		29A1D80F1B942A18003AEA54 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D80E1B942A18003AEA54 /* LoginService.m */; };
 		29A1D81D1B942A57003AEA54 /* BottomBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D8101B942A57003AEA54 /* BottomBar.png */; };
@@ -22,6 +32,8 @@
 		29A1D8271B942A57003AEA54 /* Shop_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D81A1B942A57003AEA54 /* Shop_icon.png */; };
 		29A1D8281B942A57003AEA54 /* Shop_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D81B1B942A57003AEA54 /* Shop_selected.png */; };
 		29A1D8291B942A57003AEA54 /* Shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D81C1B942A57003AEA54 /* Shop.png */; };
+		29A1D82E1B9434F5003AEA54 /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D82D1B9434F5003AEA54 /* AppUtils.m */; };
+		29A1D8301B945200003AEA54 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D82F1B945200003AEA54 /* avatar.png */; };
 		29B245D11B9425BC0040C306 /* RecomendationActivities.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C01B9425BC0040C306 /* RecomendationActivities.m */; };
 		29B245D21B9425BC0040C306 /* RecomendationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C21B9425BC0040C306 /* RecomendationBaseClass.m */; };
 		29B245D31B9425BC0040C306 /* RecomendationChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B245C41B9425BC0040C306 /* RecomendationChildren.m */; };
@@ -62,6 +74,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		294D41081B95808100C83ADF /* ELDiscoverListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ELDiscoverListCell.h; path = Cells/ELDiscoverListCell.h; sourceTree = "<group>"; };
+		294D41091B95808100C83ADF /* ELDiscoverListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ELDiscoverListCell.m; path = Cells/ELDiscoverListCell.m; sourceTree = "<group>"; };
+		294D410A1B95808100C83ADF /* ELDiscoverListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ELDiscoverListCell.xib; path = Cells/ELDiscoverListCell.xib; sourceTree = "<group>"; };
+		294D41111B959C3A00C83ADF /* SpringCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		294D41121B959C3A00C83ADF /* SpringCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		294D41141B959F5200C83ADF /* ExploreListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreListVC.m; path = Class/Home/Explore/ExploreListVC.m; sourceTree = "<group>"; };
+		294D41161B96D06E00C83ADF /* Explore_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Explore_bg.png; path = Images/Explore_bg.png; sourceTree = "<group>"; };
+		2987956A1B98159300FA468F /* 03_A_Explore_Discover_View_All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03_A_Explore_Discover_View_All.png; sourceTree = "<group>"; };
+		2987956C1B9816C200FA468F /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Images/back.png; sourceTree = "<group>"; };
+		2987956D1B9816C200FA468F /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = Images/filter.png; sourceTree = "<group>"; };
+		298795701B98189A00FA468F /* pieMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pieMenu.png; path = Images/pieMenu.png; sourceTree = "<group>"; };
+		298795711B98189A00FA468F /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Images/search.png; sourceTree = "<group>"; };
 		2994C60E1B9082AD00742A93 /* ExploreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreDataModel.h; path = Class/Home/Explore/ExploreDataModel.h; sourceTree = "<group>"; };
 		2994C60F1B9082AD00742A93 /* ExploreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreDataModel.m; path = Class/Home/Explore/ExploreDataModel.m; sourceTree = "<group>"; };
 		29A1D80D1B942A18003AEA54 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginService.h; path = Class/Login/LoginService.h; sourceTree = "<group>"; };
@@ -79,6 +103,11 @@
 		29A1D81A1B942A57003AEA54 /* Shop_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shop_icon.png; path = Images/Shop_icon.png; sourceTree = "<group>"; };
 		29A1D81B1B942A57003AEA54 /* Shop_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shop_selected.png; path = Images/Shop_selected.png; sourceTree = "<group>"; };
 		29A1D81C1B942A57003AEA54 /* Shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shop.png; path = Images/Shop.png; sourceTree = "<group>"; };
+		29A1D82B1B942E17003AEA54 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Constants/Config.h; sourceTree = "<group>"; };
+		29A1D82C1B9434F5003AEA54 /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppUtils.h; path = Parents/Class/Utility/AppUtils.h; sourceTree = SOURCE_ROOT; };
+		29A1D82D1B9434F5003AEA54 /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppUtils.m; path = Parents/Class/Utility/AppUtils.m; sourceTree = SOURCE_ROOT; };
+		29A1D82F1B945200003AEA54 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		29A1D8681B956B3B003AEA54 /* ExploreListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreListVC.h; path = Class/Home/Explore/ExploreListVC.h; sourceTree = "<group>"; };
 		29B245BE1B9425BC0040C306 /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
 		29B245BF1B9425BC0040C306 /* RecomendationActivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecomendationActivities.h; sourceTree = "<group>"; };
 		29B245C01B9425BC0040C306 /* RecomendationActivities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecomendationActivities.m; sourceTree = "<group>"; };
@@ -164,6 +193,52 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		294D410D1B9580B100C83ADF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				294D410E1B9580BA00C83ADF /* Discover */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		294D410E1B9580BA00C83ADF /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				294D41081B95808100C83ADF /* ELDiscoverListCell.h */,
+				294D41091B95808100C83ADF /* ELDiscoverListCell.m */,
+				294D410A1B95808100C83ADF /* ELDiscoverListCell.xib */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		294D410F1B9580C900C83ADF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29B245BD1B9425BC0040C306 /* Recomendation */,
+				2994C60E1B9082AD00742A93 /* ExploreDataModel.h */,
+				2994C60F1B9082AD00742A93 /* ExploreDataModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		294D41101B959C3A00C83ADF /* VVSpringCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				294D41111B959C3A00C83ADF /* SpringCollectionViewFlowLayout.h */,
+				294D41121B959C3A00C83ADF /* SpringCollectionViewFlowLayout.m */,
+			);
+			name = VVSpringCollectionViewFlowLayout;
+			path = Parents/Class/Utility/VVSpringCollectionViewFlowLayout;
+			sourceTree = SOURCE_ROOT;
+		};
+		29A1D82A1B942DFD003AEA54 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				29A1D82B1B942E17003AEA54 /* Config.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		29B245BA1B94251E0040C306 /* Appdelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +260,7 @@
 		29B245BC1B9425470040C306 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				29A1D82A1B942DFD003AEA54 /* Constants */,
 				FB98FEF41B907528007F5C4D /* Utility */,
 				29C5968A1B8F04E900138989 /* Home */,
 			);
@@ -296,11 +372,12 @@
 		29C5968B1B8F04F000138989 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				29B245BD1B9425BC0040C306 /* Recomendation */,
+				294D410F1B9580C900C83ADF /* Model */,
 				29C5968C1B8F051300138989 /* ExploreVC.h */,
 				29C5968D1B8F051400138989 /* ExploreVC.m */,
-				2994C60E1B9082AD00742A93 /* ExploreDataModel.h */,
-				2994C60F1B9082AD00742A93 /* ExploreDataModel.m */,
+				29A1D8681B956B3B003AEA54 /* ExploreListVC.h */,
+				294D41141B959F5200C83ADF /* ExploreListVC.m */,
+				294D410D1B9580B100C83ADF /* Cells */,
 			);
 			name = Explore;
 			sourceTree = "<group>";
@@ -344,7 +421,14 @@
 		29C596D81B8F142400138989 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				298795701B98189A00FA468F /* pieMenu.png */,
+				298795711B98189A00FA468F /* search.png */,
+				2987956C1B9816C200FA468F /* back.png */,
+				2987956D1B9816C200FA468F /* filter.png */,
+				2987956A1B98159300FA468F /* 03_A_Explore_Discover_View_All.png */,
+				294D41161B96D06E00C83ADF /* Explore_bg.png */,
 				29A1D8101B942A57003AEA54 /* BottomBar.png */,
+				29A1D82F1B945200003AEA54 /* avatar.png */,
 				29A1D8111B942A57003AEA54 /* Comm_icon.png */,
 				29A1D8121B942A57003AEA54 /* Dash_icon.png */,
 				29A1D8131B942A57003AEA54 /* EventPlaner.png */,
@@ -394,8 +478,11 @@
 		FB98FEF41B907528007F5C4D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				294D41101B959C3A00C83ADF /* VVSpringCollectionViewFlowLayout */,
 				29B245DD1B9426B90040C306 /* AppSingleton.h */,
 				29B245DE1B9426B90040C306 /* AppSingleton.m */,
+				29A1D82C1B9434F5003AEA54 /* AppUtils.h */,
+				29A1D82D1B9434F5003AEA54 /* AppUtils.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -485,6 +572,7 @@
 				29C596661B8DBEE000138989 /* Main.storyboard in Resources */,
 				29C5966B1B8DBEE000138989 /* LaunchScreen.xib in Resources */,
 				29A1D8211B942A57003AEA54 /* Explore_icon.png in Resources */,
+				294D41171B96D06E00C83ADF /* Explore_bg.png in Resources */,
 				29A1D8231B942A57003AEA54 /* Explore.png in Resources */,
 				29A1D81F1B942A57003AEA54 /* Dash_icon.png in Resources */,
 				29A1D8291B942A57003AEA54 /* Shop.png in Resources */,
@@ -492,12 +580,19 @@
 				29A1D8281B942A57003AEA54 /* Shop_selected.png in Resources */,
 				29A1D8221B942A57003AEA54 /* Explore_list.png in Resources */,
 				29A1D8241B942A57003AEA54 /* Messages_icon.png in Resources */,
+				2987956E1B9816C200FA468F /* back.png in Resources */,
+				298795721B98189A00FA468F /* pieMenu.png in Resources */,
 				29A1D8251B942A57003AEA54 /* recomend.png in Resources */,
 				29A1D8201B942A57003AEA54 /* EventPlaner.png in Resources */,
 				29A1D81E1B942A57003AEA54 /* Comm_icon.png in Resources */,
+				29A1D8301B945200003AEA54 /* avatar.png in Resources */,
 				29A1D8261B942A57003AEA54 /* selection.png in Resources */,
 				29A1D8271B942A57003AEA54 /* Shop_icon.png in Resources */,
+				298795731B98189A00FA468F /* search.png in Resources */,
 				29C596681B8DBEE000138989 /* Images.xcassets in Resources */,
+				2987956B1B98159300FA468F /* 03_A_Explore_Discover_View_All.png in Resources */,
+				294D410C1B95808100C83ADF /* ELDiscoverListCell.xib in Resources */,
+				2987956F1B9816C200FA468F /* filter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +651,7 @@
 				29B245D91B9425BC0040C306 /* RecomendationProducts.m in Sources */,
 				29B245E51B9427030040C306 /* SignUpVC.m in Sources */,
 				29C596601B8DBEE000138989 /* AppDelegate.m in Sources */,
+				294D41151B959F5200C83ADF /* ExploreListVC.m in Sources */,
 				29C5969E1B8F064100138989 /* ShopHomeVC.m in Sources */,
 				29C596981B8F060200138989 /* CommunityHomeVC.m in Sources */,
 				29B245D21B9425BC0040C306 /* RecomendationBaseClass.m in Sources */,
@@ -565,10 +661,13 @@
 				2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */,
 				29B245DC1B9426510040C306 /* ViewController.m in Sources */,
 				29C596861B8EEF2500138989 /* HomeVC.m in Sources */,
+				294D41131B959C3A00C83ADF /* SpringCollectionViewFlowLayout.m in Sources */,
+				29A1D82E1B9434F5003AEA54 /* AppUtils.m in Sources */,
 				29A1D80F1B942A18003AEA54 /* LoginService.m in Sources */,
 				29B245D61B9425BC0040C306 /* RecomendationExperiences.m in Sources */,
 				29B245D41B9425BC0040C306 /* RecomendationDiscover.m in Sources */,
 				29C5968E1B8F051400138989 /* ExploreVC.m in Sources */,
+				294D410B1B95808100C83ADF /* ELDiscoverListCell.m in Sources */,
 				29C5965D1B8DBEE000138989 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

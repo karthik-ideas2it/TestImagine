@@ -8,6 +8,8 @@
 
 #import "HomeVC.h"
 
+#import "Config.h"
+
 #import "ExploreVC.h"
 #import "MessagesHomeVC.h"
 #import "CommunityHomeVC.h"
@@ -56,6 +58,7 @@
         [tabBarItem1 setImage:[iconBoxOffice imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         [tabBarItem1 setSelectedImage:[selectedIconBoxOffice imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         tabBarItem1.imageInsets = UIEdgeInsetsMake(0, 0,0, 0);
+        tabBarItem1.title=[TabBarItems objectAtIndex:i];
     }
     
     //    [item0 initWithTitle:@"Box Office" image:iconBoxOffice selectedImage:selectedIconBoxOffice];
