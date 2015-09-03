@@ -11,7 +11,8 @@
 
 #define APP_NAME NSLocalizedString(@"Parents", @"App Name")
 
-#define ServerURL @""
+#define ServerURL @"http://192.168.0.36:8080/RESTServices"
+#define Recomend_API @"/recommendations"
 
 #define ExploreMenu     NSLocalizedString(@"Explore",   @"Explore menu Name")
 #define CommunityMenu   NSLocalizedString(@"Community", @"Community menu Name")
