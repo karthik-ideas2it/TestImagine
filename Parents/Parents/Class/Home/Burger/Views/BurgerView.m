@@ -14,7 +14,7 @@
 #define INCREMENTAL_ANGLE            50
 #define FAMILY_MEMBERS_START_ANGLE   180
 #define OPTIONS_VIEW_OFFSET          5
-#define FAMILY_MEMBERS_VIEW_VALUE    40
+#define FAMILY_MEMBERS_VIEW_VALUE    50
 #define OFFSET_VALUE_FOR_OPTIONS_BUTTONS_TAG 100
 #define ANIMATION_DURATION           .4
 
@@ -28,6 +28,7 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
     CGRect circleRect;
     BOOL isOptionsViewShown;
     double optionsViewStartAngle, optionsViewEndAngle,angleBetweenStartAndEndPoints;
+    UIImageView *burgerCenterImage;
 }
 
 - (void)moveButtonsWithRespectToButton:(UIButton*)targetButton isReset:(BOOL)resetFlag;
@@ -48,13 +49,20 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
     self.initialViewAngles = [NSMutableArray array];
     noOfOptions = 3;
     
+    burgerCenterImage = [[UIImageView alloc] initWithFrame:CGRectIntegral(CGRectInset(circleRect, FAMILY_MEMBERS_VIEW_VALUE, FAMILY_MEMBERS_VIEW_VALUE))];
+    [burgerCenterImage setBackgroundColor:[UIColor whiteColor]];
+    [burgerCenterImage setImage:[UIImage imageNamed:@"burger_center_image"]];
+    [burgerCenterImage setContentMode:UIViewContentModeCenter];
+    [self addSubview:burgerCenterImage];
+    
     float curAngle = DEGREES_TO_RADIANS(FAMILY_MEMBERS_START_ANGLE); // here the angle is clockwise
     float incAngle = DEGREES_TO_RADIANS(INCREMENTAL_ANGLE);
     for (NSInteger counter = 1; counter <= familyCount; counter++) {
         UIButton *objButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, FAMILY_MEMBERS_VIEW_VALUE, FAMILY_MEMBERS_VIEW_VALUE)];
         [objButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
         objButton.tag = counter;
-        [objButton setBackgroundColor:[UIColor greenColor]];
+        [objButton setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"family_%ld",(long)counter]] forState:UIControlStateNormal];
+       // [objButton setBackgroundColor:[UIColor greenColor]];
         objButton.layer.masksToBounds = YES;
         objButton.layer.cornerRadius = CGRectGetWidth(objButton.bounds)/2;
         [self addSubview:objButton];
@@ -66,7 +74,6 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
     [self addSubview:optionsViewPerPerson];
     maskOptionsViewForCornerRadius = [[UIView alloc] initWithFrame:optionsViewPerPerson.bounds];
     [optionsViewPerPerson addSubview:maskOptionsViewForCornerRadius];
-    [maskOptionsViewForCornerRadius.layer setCornerRadius:CGRectGetWidth(optionsViewPerPerson.bounds)/2];
     [maskOptionsViewForCornerRadius.layer setBorderWidth:FAMILY_MEMBERS_VIEW_VALUE + 2*OPTIONS_VIEW_OFFSET];
     [maskOptionsViewForCornerRadius.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self sendSubviewToBack:optionsViewPerPerson];
@@ -103,7 +110,9 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
     circleRect = CGRectIntegral(CGRectInset(self.bounds, (FAMILY_MEMBERS_VIEW_VALUE/2) + OPTIONS_VIEW_OFFSET, (FAMILY_MEMBERS_VIEW_VALUE/2) + OPTIONS_VIEW_OFFSET));
     convertedCenter = [self convertPoint:self.center fromView:self.superview];
     radius = CGRectGetWidth(circleRect)/2;
-    // convertedCenter = CGPointMake(radius, CGRectGetHeight(circleRect)/2);
+    [burgerCenterImage setFrame:CGRectIntegral(CGRectInset(circleRect, FAMILY_MEMBERS_VIEW_VALUE, FAMILY_MEMBERS_VIEW_VALUE))];
+    [burgerCenterImage.layer setCornerRadius:CGRectGetWidth(burgerCenterImage.bounds)/2];
+    [maskOptionsViewForCornerRadius.layer setCornerRadius:CGRectGetWidth(optionsViewPerPerson.bounds)/2];
     NSLog(@"%@",NSStringFromCGPoint(convertedCenter));
     float curAngle = DEGREES_TO_RADIANS(FAMILY_MEMBERS_START_ANGLE); // here the angle is clockwise
     float incAngle = DEGREES_TO_RADIANS(INCREMENTAL_ANGLE);//( 360.0/(familyCount) )*M_PI/180.0;

@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.66666666666666" y="195.96000000000001"/>
+            <point key="canvasLocation" x="-204" y="138"/>
         </scene>
         <!--Sign UpVC-->
         <scene sceneID="eQq-NM-ZOt">
@@ -718,27 +718,107 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQ1-7o-nXW" userLabel="contentview">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-0X-NEx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-0X-NEx">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uas-ss-hzF" customClass="BurgerView">
-                                        <rect key="frame" x="37" y="184" width="300" height="300"/>
+                                        <rect key="frame" x="37" y="154" width="300" height="300"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Uas-ss-hzF" secondAttribute="height" multiplier="1:1" id="O3R-wc-frk"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v40-b8-HGq" userLabel="button_close">
+                                        <rect key="frame" x="5" y="25" width="53" height="53"/>
+                                        <state key="normal" image="button_close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnCloseTapped:" destination="1Yy-4Y-eNZ" eventType="touchUpInside" id="KfJ-Wz-Mv3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whr-KV-Qu1" userLabel="button_like">
+                                        <rect key="frame" x="317" y="25" width="53" height="53"/>
+                                        <state key="normal" image="button_like">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnLikeTapped:" destination="1Yy-4Y-eNZ" eventType="touchUpInside" id="9aL-QS-2rj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps4-Lb-6Wa" userLabel="Button_calendar">
+                                        <rect key="frame" x="257" y="25" width="53" height="53"/>
+                                        <state key="normal" image="button_calendar">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnCalendarTapped:" destination="1Yy-4Y-eNZ" eventType="touchUpInside" id="Y7R-dd-JaL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9F-NE-7rn" userLabel="Button_notification">
+                                        <rect key="frame" x="197" y="25" width="53" height="53"/>
+                                        <state key="normal" image="button_notification">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnNotificationTapped:" destination="1Yy-4Y-eNZ" eventType="touchUpInside" id="QOn-xb-3AN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fwv-fl-j1c" userLabel="Button_contactUs">
+                                        <rect key="frame" x="225" y="593" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="5Ju-dF-RGZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="fqg-2o-rUc"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Contact Us">
+                                            <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnContactUsTapped:" destination="1Yy-4Y-eNZ" eventType="touchUpInside" id="InZ-2m-NPY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tWf-hS-cOj" userLabel="Button_faq">
+                                        <rect key="frame" x="225" y="533" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="46D-lT-qdL"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="FAQs">
+                                            <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnFAQTapped:" destination="1Yy-4Y-eNZ" eventType="touchUpInside" id="eUJ-oe-wc6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="tWf-hS-cOj" firstAttribute="trailing" secondItem="fwv-fl-j1c" secondAttribute="trailing" id="0ev-ME-iF2"/>
                                     <constraint firstItem="Uas-ss-hzF" firstAttribute="width" secondItem="EQ1-7o-nXW" secondAttribute="width" multiplier="0.8" id="2yr-6G-SpS"/>
+                                    <constraint firstItem="v40-b8-HGq" firstAttribute="leading" secondItem="EQ1-7o-nXW" secondAttribute="leading" constant="5" id="8sY-z7-qJa"/>
+                                    <constraint firstItem="L9F-NE-7rn" firstAttribute="top" secondItem="Ps4-Lb-6Wa" secondAttribute="top" id="G6V-T4-9uO"/>
+                                    <constraint firstAttribute="bottom" secondItem="fwv-fl-j1c" secondAttribute="bottom" constant="24" id="H1s-oN-4nM"/>
                                     <constraint firstItem="sjE-0X-NEx" firstAttribute="leading" secondItem="EQ1-7o-nXW" secondAttribute="leading" id="H7U-W0-SM7"/>
+                                    <constraint firstItem="Ps4-Lb-6Wa" firstAttribute="leading" secondItem="L9F-NE-7rn" secondAttribute="trailing" constant="7" id="K7f-uq-xGk"/>
+                                    <constraint firstItem="Whr-KV-Qu1" firstAttribute="leading" secondItem="Ps4-Lb-6Wa" secondAttribute="trailing" constant="7" id="O0J-up-GyV"/>
                                     <constraint firstItem="sjE-0X-NEx" firstAttribute="top" secondItem="EQ1-7o-nXW" secondAttribute="top" id="Opo-5C-4y8"/>
-                                    <constraint firstAttribute="centerY" secondItem="Uas-ss-hzF" secondAttribute="centerY" id="U6B-Qk-0UZ"/>
+                                    <constraint firstItem="Whr-KV-Qu1" firstAttribute="top" secondItem="Ps4-Lb-6Wa" secondAttribute="top" id="QWe-Xe-x63"/>
+                                    <constraint firstAttribute="centerY" secondItem="Uas-ss-hzF" secondAttribute="centerY" constant="30" id="U6B-Qk-0UZ"/>
+                                    <constraint firstItem="fwv-fl-j1c" firstAttribute="top" secondItem="tWf-hS-cOj" secondAttribute="bottom" constant="10" id="Vse-sb-4Jh"/>
+                                    <constraint firstItem="tWf-hS-cOj" firstAttribute="leading" secondItem="fwv-fl-j1c" secondAttribute="leading" id="VtS-c0-SAv"/>
+                                    <constraint firstItem="v40-b8-HGq" firstAttribute="top" secondItem="EQ1-7o-nXW" secondAttribute="top" constant="25" id="XPH-1b-I84"/>
                                     <constraint firstAttribute="centerX" secondItem="Uas-ss-hzF" secondAttribute="centerX" id="ddK-cN-Ahn"/>
+                                    <constraint firstItem="Whr-KV-Qu1" firstAttribute="top" secondItem="v40-b8-HGq" secondAttribute="top" id="efT-ri-fzp"/>
+                                    <constraint firstAttribute="trailing" secondItem="fwv-fl-j1c" secondAttribute="trailing" constant="-50" id="i5U-td-b0R"/>
                                     <constraint firstAttribute="trailing" secondItem="sjE-0X-NEx" secondAttribute="trailing" id="jVJ-ah-bsD"/>
                                     <constraint firstAttribute="bottom" secondItem="sjE-0X-NEx" secondAttribute="bottom" id="laC-EU-oPt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Whr-KV-Qu1" secondAttribute="trailing" constant="5" id="zWZ-NC-BZC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -752,6 +832,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnContactUs" destination="fwv-fl-j1c" id="F2h-x3-C50"/>
+                        <outlet property="btnFAQ" destination="tWf-hS-cOj" id="Rha-vR-Ar0"/>
                         <outlet property="objBurgerView" destination="Uas-ss-hzF" id="5VR-Sg-sQa"/>
                     </connections>
                 </viewController>
@@ -762,6 +844,11 @@
     <resources>
         <image name="avatar.png" width="128" height="128"/>
         <image name="back.png" width="106" height="107"/>
+        <image name="background" width="1562" height="2779"/>
+        <image name="button_calendar" width="53" height="53"/>
+        <image name="button_close" width="53" height="53"/>
+        <image name="button_like" width="53" height="53"/>
+        <image name="button_notification" width="53" height="53"/>
         <image name="filter.png" width="106" height="107"/>
         <image name="pieMenu.png" width="106" height="106"/>
         <image name="search.png" width="106" height="106"/>

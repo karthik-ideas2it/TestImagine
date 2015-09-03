@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.objBurgerView setupViewsWithFamilyCount:5];
+    [self.btnContactUs.layer setCornerRadius:25];
+    [self.btnFAQ.layer setCornerRadius:25];
+    [self.objBurgerView setupViewsWithFamilyCount:4];
     // Do any additional setup after loading the view.
 }
 
@@ -35,4 +37,23 @@
 }
 */
 
+- (IBAction)btnFAQTapped:(id)sender {
+}
+
+- (IBAction)btnContactUsTapped:(id)sender {
+}
+
+- (IBAction)btnCloseTapped:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)btnLikeTapped:(id)sender {
+}
+
+- (IBAction)btnCalendarTapped:(id)sender {
+}
+
+- (IBAction)btnNotificationTapped:(id)sender {
+}
 @end
