@@ -55,8 +55,8 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ELDiscoverListCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-//    NSDictionary *dict= @[@"title":@"",@"name":@"",@"date":@"",@"":@""];
-    [cell SetValuesForItems:nil];
+    NSDictionary *dict= @{@"title":@"3 ways to engage better with your kids",@"name":@"Barbara jones",@"date":@"17 Aug, 2015"};
+    [cell SetValuesForItems:dict];
 
     return cell;
 }
