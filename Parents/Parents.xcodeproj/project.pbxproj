@@ -18,6 +18,7 @@
 		298795721B98189A00FA468F /* pieMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 298795701B98189A00FA468F /* pieMenu.png */; };
 		298795731B98189A00FA468F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 298795711B98189A00FA468F /* search.png */; };
 		298795761B9849F500FA468F /* ExploreDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 298795751B9849F500FA468F /* ExploreDetailVC.m */; };
+		298795781B987C6900FA468F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298795771B987C6900FA468F /* AVKit.framework */; };
 		2994C6101B9082AD00742A93 /* ExploreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2994C60F1B9082AD00742A93 /* ExploreDataModel.m */; };
 		29A1D80F1B942A18003AEA54 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A1D80E1B942A18003AEA54 /* LoginService.m */; };
 		29A1D81D1B942A57003AEA54 /* BottomBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A1D8101B942A57003AEA54 /* BottomBar.png */; };
@@ -91,6 +92,7 @@
 		298795711B98189A00FA468F /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = Images/search.png; sourceTree = "<group>"; };
 		298795741B9849F500FA468F /* ExploreDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreDetailVC.h; path = Class/Home/Explore/ExploreDetailVC.h; sourceTree = "<group>"; };
 		298795751B9849F500FA468F /* ExploreDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreDetailVC.m; path = Class/Home/Explore/ExploreDetailVC.m; sourceTree = "<group>"; };
+		298795771B987C6900FA468F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		2994C60E1B9082AD00742A93 /* ExploreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExploreDataModel.h; path = Class/Home/Explore/ExploreDataModel.h; sourceTree = "<group>"; };
 		2994C60F1B9082AD00742A93 /* ExploreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExploreDataModel.m; path = Class/Home/Explore/ExploreDataModel.m; sourceTree = "<group>"; };
 		29A1D80D1B942A18003AEA54 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginService.h; path = Class/Login/LoginService.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298795781B987C6900FA468F /* AVKit.framework in Frameworks */,
 				29C596831B8DE04600138989 /* FBSDKLoginKit.framework in Frameworks */,
 				29C596811B8DDEFA00138989 /* FBSDKCoreKit.framework in Frameworks */,
 				9211C3A3C427E8E6CDD67CCC /* libPods.a in Frameworks */,
@@ -482,6 +485,7 @@
 		3DFB371A967037B20D184B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				298795771B987C6900FA468F /* AVKit.framework */,
 				4780BC81102B7D758096A04A /* libPods.a */,
 			);
 			name = Frameworks;

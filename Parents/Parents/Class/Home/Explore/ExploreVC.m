@@ -209,17 +209,29 @@ UIView *SelectedObject;
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 4;
+    return 4+1 ;// +1 for view more cell
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];;
     
+    if(indexPath.row==4)
+    {
+        UILabel *lbl = [[UILabel alloc]init];
+        [lbl setFrame:CGRectMake(0, (cell.frame.size.height-20)/2, cell.frame.size.width, 20)];
+        [lbl setText:@"View More"];
+        [lbl setTextAlignment:NSTextAlignmentCenter];
+        [cell addSubview:lbl];
+        return cell;
+        
+    }
     if(cell != nil)
     {
   
     switch (collectionView.tag) {
         case 0:
         {
+           
+            
             cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
             
             //Category label
@@ -296,14 +308,27 @@ UIView *SelectedObject;
         default:
             break;
     }
-        [cell setClipsToBounds:YES];
-    [cell.layer setCornerRadius:8];
-        
-    }
+           }
     return  cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row==4)
+    {
+        switch (collectionView.tag) {
+            case 0:
+                return CGSizeMake(80, 242);
+                break;
+            case 1:
+                return CGSizeMake(80, 115);
+                break;
+            case 2:
+                return CGSizeMake(80, 100);
+                break;
+            default:
+                break;
+    }
+    }
     switch (collectionView.tag) {
         case 0:
     return CGSizeMake(316, 242);
@@ -317,6 +342,7 @@ UIView *SelectedObject;
         default:
             break;
     }
+
     return CGSizeMake(0, 0);
 }
 #pragma mark DownloadImages
