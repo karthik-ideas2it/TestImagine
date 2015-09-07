@@ -9,6 +9,7 @@
 #import "ExploreListVC.h"
 #import "ELDiscoverListCell.h"
 #import "SpringCollectionViewFlowLayout.h"
+#import "ExploreDetailVC.h"
 @implementation ExploreListVC
 @synthesize str_type;
 
@@ -55,8 +56,8 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ELDiscoverListCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-//    NSDictionary *dict= @[@"title":@"",@"name":@"",@"date":@"",@"":@""];
-    [cell SetValuesForItems:nil];
+    NSDictionary *dict= @{@"title":@"3 ways to engage better with your kids",@"name":@"Barbara jones",@"date":@"17 Aug, 2015"};
+    [cell SetValuesForItems:dict];
 
     return cell;
 }
@@ -72,6 +73,11 @@
 {
     return 0.5;
 }
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    [self performSegueWithIdentifier:@"ExploreListDetail" sender:nil];
+}
 #pragma mark Segment control delegates
 
 -(IBAction)optionsChanged:(id)sender
@@ -79,4 +85,16 @@
     
 }
 
+#pragma mark SearchBar Operations
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    searchBar.text=@"";
+    
+    [searchBar resignFirstResponder];
+    
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    
+}
 @end

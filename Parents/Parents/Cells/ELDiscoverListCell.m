@@ -16,9 +16,10 @@
 -(void)SetValuesForItems:(id)Dict
 {
     [[(UIImageView *) self viewWithTag:1].layer setCornerRadius:4];
-    [(UILabel *) [self viewWithTag:2] setText:@"Keep an eye out for developmental milestones for your little one"];
-    [(UILabel *) [self viewWithTag:3] setText:@"Sam Adams"];
-    [(UILabel *) [self viewWithTag:4] setText:@"15 Aug, 2015"];
+//    [[(UIImageView *) [self viewWithTag:1] setImage:[UIImage imageNamed:@""]];
+    [(UILabel *) [self viewWithTag:2] setText:[NSString stringWithFormat:@"%@",[Dict valueForKey:@"title"]]];
+    [(UILabel *) [self viewWithTag:3] setText:[NSString stringWithFormat:@"%@",[Dict valueForKey:@"name"]]];
+    [(UILabel *) [self viewWithTag:4] setText:[NSString stringWithFormat:@"%@",[Dict valueForKey:@"date"]]];
 }
 
 @end

@@ -149,7 +149,7 @@ static AWSS3TransferUtility *_defaultS3TransferUtility = nil;
         if ([NSURLSessionConfiguration respondsToSelector:@selector(backgroundSessionConfigurationWithIdentifier:)]) {
             configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:_sessionIdentifier];
         } else {
-            configuration = [NSURLSessionConfiguration backgroundSessionConfiguration:_sessionIdentifier];
+            configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:_sessionIdentifier];
         }
 
         configuration.timeoutIntervalForResource = AWSS3TransferUtilityTimeoutIntervalForResource;
