@@ -723,7 +723,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uas-ss-hzF" customClass="BurgerView">
-                                        <rect key="frame" x="37" y="154" width="300" height="300"/>
+                                        <rect key="frame" x="37" y="164" width="300" height="300"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Uas-ss-hzF" secondAttribute="height" multiplier="1:1" id="O3R-wc-frk"/>
@@ -809,7 +809,7 @@
                                     <constraint firstItem="Whr-KV-Qu1" firstAttribute="leading" secondItem="Ps4-Lb-6Wa" secondAttribute="trailing" constant="7" id="O0J-up-GyV"/>
                                     <constraint firstItem="sjE-0X-NEx" firstAttribute="top" secondItem="EQ1-7o-nXW" secondAttribute="top" id="Opo-5C-4y8"/>
                                     <constraint firstItem="Whr-KV-Qu1" firstAttribute="top" secondItem="Ps4-Lb-6Wa" secondAttribute="top" id="QWe-Xe-x63"/>
-                                    <constraint firstAttribute="centerY" secondItem="Uas-ss-hzF" secondAttribute="centerY" constant="30" id="U6B-Qk-0UZ"/>
+                                    <constraint firstAttribute="centerY" secondItem="Uas-ss-hzF" secondAttribute="centerY" constant="20" id="U6B-Qk-0UZ"/>
                                     <constraint firstItem="fwv-fl-j1c" firstAttribute="top" secondItem="tWf-hS-cOj" secondAttribute="bottom" constant="10" id="Vse-sb-4Jh"/>
                                     <constraint firstItem="tWf-hS-cOj" firstAttribute="leading" secondItem="fwv-fl-j1c" secondAttribute="leading" id="VtS-c0-SAv"/>
                                     <constraint firstItem="v40-b8-HGq" firstAttribute="top" secondItem="EQ1-7o-nXW" secondAttribute="top" constant="25" id="XPH-1b-I84"/>

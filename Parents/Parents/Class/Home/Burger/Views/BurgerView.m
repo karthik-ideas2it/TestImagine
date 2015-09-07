@@ -17,6 +17,7 @@
 #define FAMILY_MEMBERS_VIEW_VALUE    50
 #define OFFSET_VALUE_FOR_OPTIONS_BUTTONS_TAG 100
 #define ANIMATION_DURATION           .4
+#define MAX_NO_OF_OPTIONS_BUTTONS    3
 
 static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
 
@@ -69,7 +70,6 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
         [self.initialViewAngles addObject:[NSNumber numberWithFloat:curAngle]];
         curAngle +=incAngle;
     }
-    
     optionsViewPerPerson = [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:optionsViewPerPerson];
     maskOptionsViewForCornerRadius = [[UIView alloc] initWithFrame:optionsViewPerPerson.bounds];
@@ -77,7 +77,7 @@ static CGFloat const kDashedLinesLength[]   = {2.0f, 4.0f};
     [maskOptionsViewForCornerRadius.layer setBorderWidth:FAMILY_MEMBERS_VIEW_VALUE + 2*OPTIONS_VIEW_OFFSET];
     [maskOptionsViewForCornerRadius.layer setBorderColor:[UIColor whiteColor].CGColor];
     [self sendSubviewToBack:optionsViewPerPerson];
-    for (NSInteger counter = 1; counter <= 3; counter++) {
+    for (NSInteger counter = 1; counter <= MAX_NO_OF_OPTIONS_BUTTONS; counter++) {
         UIButton *optionsButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, FAMILY_MEMBERS_VIEW_VALUE, FAMILY_MEMBERS_VIEW_VALUE)];
         [optionsButton addTarget:self action:@selector(optionsTapped:) forControlEvents:UIControlEventTouchUpInside];
         optionsButton.tag = OFFSET_VALUE_FOR_OPTIONS_BUTTONS_TAG + counter;
